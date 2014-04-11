@@ -11,20 +11,53 @@
 		568FCE9818F780C6002D65F3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 568FCE9718F780C6002D65F3 /* Foundation.framework */; };
 		568FCE9A18F780C6002D65F3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 568FCE9918F780C6002D65F3 /* CoreGraphics.framework */; };
 		568FCEA018F780C6002D65F3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 568FCE9E18F780C6002D65F3 /* InfoPlist.strings */; };
-		568FCEA218F780C6002D65F3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 568FCEA118F780C6002D65F3 /* main.m */; };
+		568FCEA218F780C6002D65F3 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = 568FCEA118F780C6002D65F3 /* main.mm */; };
 		568FCEA618F780C7002D65F3 /* InfoGrabrAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 568FCEA518F780C7002D65F3 /* InfoGrabrAppDelegate.m */; };
 		568FCEA818F780C7002D65F3 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 568FCEA718F780C7002D65F3 /* Default.png */; };
 		568FCEAA18F780C7002D65F3 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 568FCEA918F780C7002D65F3 /* Default@2x.png */; };
 		568FCEAC18F780C7002D65F3 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 568FCEAB18F780C7002D65F3 /* Default-568h@2x.png */; };
-		568FCEAF18F780C7002D65F3 /* InfoGrabrFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 568FCEAE18F780C7002D65F3 /* InfoGrabrFirstViewController.m */; };
 		568FCEB118F780C7002D65F3 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = 568FCEB018F780C7002D65F3 /* first.png */; };
 		568FCEB318F780C7002D65F3 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 568FCEB218F780C7002D65F3 /* first@2x.png */; };
 		568FCEB618F780C7002D65F3 /* InfoGrabrSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 568FCEB518F780C7002D65F3 /* InfoGrabrSecondViewController.m */; };
 		568FCEB818F780C7002D65F3 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 568FCEB718F780C7002D65F3 /* second.png */; };
 		568FCEBA18F780C7002D65F3 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 568FCEB918F780C7002D65F3 /* second@2x.png */; };
-		568FCEBD18F780C7002D65F3 /* InfoGrabrFirstViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 568FCEBB18F780C7002D65F3 /* InfoGrabrFirstViewController.xib */; };
 		568FCEC018F780C7002D65F3 /* InfoGrabrSecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 568FCEBE18F780C7002D65F3 /* InfoGrabrSecondViewController.xib */; };
+		568FCED318F7846C002D65F3 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 568FCED218F7846C002D65F3 /* AVFoundation.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		568FCED518F78474002D65F3 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 568FCED418F78474002D65F3 /* AudioToolbox.framework */; };
+		568FCED718F78480002D65F3 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 568FCED618F78480002D65F3 /* CoreVideo.framework */; };
+		568FCED918F78487002D65F3 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 568FCED818F78487002D65F3 /* CoreMedia.framework */; };
+		568FCEDB18F78492002D65F3 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 568FCEDA18F78492002D65F3 /* libiconv.dylib */; };
+		568FCEDE18F7849E002D65F3 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 568FCEDC18F7849E002D65F3 /* AddressBook.framework */; };
+		568FCEDF18F7849E002D65F3 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 568FCEDD18F7849E002D65F3 /* AddressBookUI.framework */; };
+		568FCEF418F787C9002D65F3 /* libZXingWidget.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 568FCEEF18F787B5002D65F3 /* libZXingWidget.a */; };
+		5694FDDA18F8188B0061A991 /* ScanViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5694FDD818F8188B0061A991 /* ScanViewController.mm */; };
+		5694FDDB18F8188B0061A991 /* ScanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5694FDD918F8188B0061A991 /* ScanViewController.xib */; };
+		5694FDDD18F823A80061A991 /* beep-beep.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 5694FDDC18F823A70061A991 /* beep-beep.aiff */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		568FCEEE18F787B5002D65F3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 568FCEE918F787B5002D65F3 /* ZXingWidget.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2AAC07E0554694100DB518D;
+			remoteInfo = ZXingWidget;
+		};
+		568FCEF018F787B5002D65F3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 568FCEE918F787B5002D65F3 /* ZXingWidget.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1D60398D13DF7CAD006F4B51;
+			remoteInfo = ZXingTests;
+		};
+		568FCEF218F787C2002D65F3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 568FCEE918F787B5002D65F3 /* ZXingWidget.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D;
+			remoteInfo = ZXingWidget;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		568FCE9218F780C6002D65F3 /* InfoGrabr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InfoGrabr.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -33,23 +66,32 @@
 		568FCE9918F780C6002D65F3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		568FCE9D18F780C6002D65F3 /* InfoGrabr-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "InfoGrabr-Info.plist"; sourceTree = "<group>"; };
 		568FCE9F18F780C6002D65F3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		568FCEA118F780C6002D65F3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		568FCEA118F780C6002D65F3 /* main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
 		568FCEA318F780C6002D65F3 /* InfoGrabr-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "InfoGrabr-Prefix.pch"; sourceTree = "<group>"; };
 		568FCEA418F780C7002D65F3 /* InfoGrabrAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfoGrabrAppDelegate.h; sourceTree = "<group>"; };
 		568FCEA518F780C7002D65F3 /* InfoGrabrAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfoGrabrAppDelegate.m; sourceTree = "<group>"; };
 		568FCEA718F780C7002D65F3 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		568FCEA918F780C7002D65F3 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		568FCEAB18F780C7002D65F3 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		568FCEAD18F780C7002D65F3 /* InfoGrabrFirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfoGrabrFirstViewController.h; sourceTree = "<group>"; };
-		568FCEAE18F780C7002D65F3 /* InfoGrabrFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfoGrabrFirstViewController.m; sourceTree = "<group>"; };
 		568FCEB018F780C7002D65F3 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
 		568FCEB218F780C7002D65F3 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
 		568FCEB418F780C7002D65F3 /* InfoGrabrSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfoGrabrSecondViewController.h; sourceTree = "<group>"; };
 		568FCEB518F780C7002D65F3 /* InfoGrabrSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfoGrabrSecondViewController.m; sourceTree = "<group>"; };
 		568FCEB718F780C7002D65F3 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
 		568FCEB918F780C7002D65F3 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
-		568FCEBC18F780C7002D65F3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/InfoGrabrFirstViewController.xib; sourceTree = "<group>"; };
 		568FCEBF18F780C7002D65F3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/InfoGrabrSecondViewController.xib; sourceTree = "<group>"; };
+		568FCED218F7846C002D65F3 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		568FCED418F78474002D65F3 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		568FCED618F78480002D65F3 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		568FCED818F78487002D65F3 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		568FCEDA18F78492002D65F3 /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
+		568FCEDC18F7849E002D65F3 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		568FCEDD18F7849E002D65F3 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
+		568FCEE918F787B5002D65F3 /* ZXingWidget.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ZXingWidget.xcodeproj; path = lib/iphone/ZXingWidget/ZXingWidget.xcodeproj; sourceTree = "<group>"; };
+		5694FDD718F8188B0061A991 /* ScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanViewController.h; sourceTree = "<group>"; };
+		5694FDD818F8188B0061A991 /* ScanViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ScanViewController.mm; sourceTree = "<group>"; };
+		5694FDD918F8188B0061A991 /* ScanViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScanViewController.xib; sourceTree = "<group>"; };
+		5694FDDC18F823A70061A991 /* beep-beep.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = "beep-beep.aiff"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +99,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				568FCEF418F787C9002D65F3 /* libZXingWidget.a in Frameworks */,
+				568FCEDE18F7849E002D65F3 /* AddressBook.framework in Frameworks */,
+				568FCEDF18F7849E002D65F3 /* AddressBookUI.framework in Frameworks */,
+				568FCEDB18F78492002D65F3 /* libiconv.dylib in Frameworks */,
+				568FCED918F78487002D65F3 /* CoreMedia.framework in Frameworks */,
+				568FCED718F78480002D65F3 /* CoreVideo.framework in Frameworks */,
+				568FCED518F78474002D65F3 /* AudioToolbox.framework in Frameworks */,
+				568FCED318F7846C002D65F3 /* AVFoundation.framework in Frameworks */,
 				568FCE9618F780C6002D65F3 /* UIKit.framework in Frameworks */,
 				568FCE9818F780C6002D65F3 /* Foundation.framework in Frameworks */,
 				568FCE9A18F780C6002D65F3 /* CoreGraphics.framework in Frameworks */,
@@ -69,6 +119,7 @@
 		568FCE8918F780C6002D65F3 = {
 			isa = PBXGroup;
 			children = (
+				568FCEE918F787B5002D65F3 /* ZXingWidget.xcodeproj */,
 				568FCE9B18F780C6002D65F3 /* InfoGrabr */,
 				568FCE9418F780C6002D65F3 /* Frameworks */,
 				568FCE9318F780C6002D65F3 /* Products */,
@@ -86,6 +137,13 @@
 		568FCE9418F780C6002D65F3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				568FCEDC18F7849E002D65F3 /* AddressBook.framework */,
+				568FCEDD18F7849E002D65F3 /* AddressBookUI.framework */,
+				568FCEDA18F78492002D65F3 /* libiconv.dylib */,
+				568FCED818F78487002D65F3 /* CoreMedia.framework */,
+				568FCED618F78480002D65F3 /* CoreVideo.framework */,
+				568FCED418F78474002D65F3 /* AudioToolbox.framework */,
+				568FCED218F7846C002D65F3 /* AVFoundation.framework */,
 				568FCE9518F780C6002D65F3 /* UIKit.framework */,
 				568FCE9718F780C6002D65F3 /* Foundation.framework */,
 				568FCE9918F780C6002D65F3 /* CoreGraphics.framework */,
@@ -96,17 +154,18 @@
 		568FCE9B18F780C6002D65F3 /* InfoGrabr */ = {
 			isa = PBXGroup;
 			children = (
+				5694FDDC18F823A70061A991 /* beep-beep.aiff */,
+				5694FDD718F8188B0061A991 /* ScanViewController.h */,
+				5694FDD818F8188B0061A991 /* ScanViewController.mm */,
+				5694FDD918F8188B0061A991 /* ScanViewController.xib */,
 				568FCEA418F780C7002D65F3 /* InfoGrabrAppDelegate.h */,
 				568FCEA518F780C7002D65F3 /* InfoGrabrAppDelegate.m */,
-				568FCEAD18F780C7002D65F3 /* InfoGrabrFirstViewController.h */,
-				568FCEAE18F780C7002D65F3 /* InfoGrabrFirstViewController.m */,
 				568FCEB018F780C7002D65F3 /* first.png */,
 				568FCEB218F780C7002D65F3 /* first@2x.png */,
 				568FCEB418F780C7002D65F3 /* InfoGrabrSecondViewController.h */,
 				568FCEB518F780C7002D65F3 /* InfoGrabrSecondViewController.m */,
 				568FCEB718F780C7002D65F3 /* second.png */,
 				568FCEB918F780C7002D65F3 /* second@2x.png */,
-				568FCEBB18F780C7002D65F3 /* InfoGrabrFirstViewController.xib */,
 				568FCEBE18F780C7002D65F3 /* InfoGrabrSecondViewController.xib */,
 				568FCE9C18F780C6002D65F3 /* Supporting Files */,
 			);
@@ -118,13 +177,22 @@
 			children = (
 				568FCE9D18F780C6002D65F3 /* InfoGrabr-Info.plist */,
 				568FCE9E18F780C6002D65F3 /* InfoPlist.strings */,
-				568FCEA118F780C6002D65F3 /* main.m */,
+				568FCEA118F780C6002D65F3 /* main.mm */,
 				568FCEA318F780C6002D65F3 /* InfoGrabr-Prefix.pch */,
 				568FCEA718F780C7002D65F3 /* Default.png */,
 				568FCEA918F780C7002D65F3 /* Default@2x.png */,
 				568FCEAB18F780C7002D65F3 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		568FCEEA18F787B5002D65F3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				568FCEEF18F787B5002D65F3 /* libZXingWidget.a */,
+				568FCEF118F787B5002D65F3 /* ZXingTests.octest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,6 +209,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				568FCEF318F787C2002D65F3 /* PBXTargetDependency */,
 			);
 			name = InfoGrabr;
 			productName = InfoGrabr;
@@ -167,12 +236,35 @@
 			mainGroup = 568FCE8918F780C6002D65F3;
 			productRefGroup = 568FCE9318F780C6002D65F3 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 568FCEEA18F787B5002D65F3 /* Products */;
+					ProjectRef = 568FCEE918F787B5002D65F3 /* ZXingWidget.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				568FCE9118F780C6002D65F3 /* InfoGrabr */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		568FCEEF18F787B5002D65F3 /* libZXingWidget.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libZXingWidget.a;
+			remoteRef = 568FCEEE18F787B5002D65F3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		568FCEF118F787B5002D65F3 /* ZXingTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ZXingTests.octest;
+			remoteRef = 568FCEF018F787B5002D65F3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		568FCE9018F780C6002D65F3 /* Resources */ = {
@@ -187,8 +279,9 @@
 				568FCEB318F780C7002D65F3 /* first@2x.png in Resources */,
 				568FCEB818F780C7002D65F3 /* second.png in Resources */,
 				568FCEBA18F780C7002D65F3 /* second@2x.png in Resources */,
-				568FCEBD18F780C7002D65F3 /* InfoGrabrFirstViewController.xib in Resources */,
 				568FCEC018F780C7002D65F3 /* InfoGrabrSecondViewController.xib in Resources */,
+				5694FDDB18F8188B0061A991 /* ScanViewController.xib in Resources */,
+				5694FDDD18F823A80061A991 /* beep-beep.aiff in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,14 +292,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				568FCEA218F780C6002D65F3 /* main.m in Sources */,
+				568FCEA218F780C6002D65F3 /* main.mm in Sources */,
 				568FCEA618F780C7002D65F3 /* InfoGrabrAppDelegate.m in Sources */,
-				568FCEAF18F780C7002D65F3 /* InfoGrabrFirstViewController.m in Sources */,
 				568FCEB618F780C7002D65F3 /* InfoGrabrSecondViewController.m in Sources */,
+				5694FDDA18F8188B0061A991 /* ScanViewController.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		568FCEF318F787C2002D65F3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ZXingWidget;
+			targetProxy = 568FCEF218F787C2002D65F3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		568FCE9E18F780C6002D65F3 /* InfoPlist.strings */ = {
@@ -215,14 +316,6 @@
 				568FCE9F18F780C6002D65F3 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		568FCEBB18F780C7002D65F3 /* InfoGrabrFirstViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				568FCEBC18F780C7002D65F3 /* en */,
-			);
-			name = InfoGrabrFirstViewController.xib;
 			sourceTree = "<group>";
 		};
 		568FCEBE18F780C7002D65F3 /* InfoGrabrSecondViewController.xib */ = {
@@ -297,10 +390,18 @@
 		568FCEC418F780C7002D65F3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CLANG_CXX_LIBRARY = "compiler-default";
+				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "InfoGrabr/InfoGrabr-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					lib/cpp/core/src,
+					"lib/iphone/ZXingWidget/Classes/**",
+				);
 				INFOPLIST_FILE = "InfoGrabr/InfoGrabr-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -308,10 +409,18 @@
 		568FCEC518F780C7002D65F3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CLANG_CXX_LIBRARY = "compiler-default";
+				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "InfoGrabr/InfoGrabr-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					lib/cpp/core/src,
+					"lib/iphone/ZXingWidget/Classes/**",
+				);
 				INFOPLIST_FILE = "InfoGrabr/InfoGrabr-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -335,6 +444,7 @@
 				568FCEC518F780C7002D65F3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
