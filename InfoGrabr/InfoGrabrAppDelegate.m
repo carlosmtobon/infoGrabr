@@ -1,10 +1,4 @@
-//
-//  InfoGrabrAppDelegate.m
-//  InfoGrabr
-//
-//  Created by Charles on 4/10/14.
-//  Copyright (c) 2014 Florida International University. All rights reserved.
-//
+
 
 #import "InfoGrabrAppDelegate.h"
 
