@@ -39,7 +39,7 @@
         NSError* error = nil;
         NSArray* result = [ctx executeFetchRequest:request error:&error];
         if (!result) {
-            NSLog(@"%@", [error localizedDescription]);
+            [NSException raise:@"Fetch failed" format:@"Reason: %@", [error localizedDescription]];
         }
         
         allAttendees = [[NSMutableArray alloc] initWithArray:result];
@@ -90,18 +90,5 @@
     [self.ctx deleteObject:attendee];
     [self.allAttendees removeObjectIdenticalTo:attendee];
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 @end

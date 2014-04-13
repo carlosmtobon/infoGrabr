@@ -20,7 +20,7 @@
 
 -(NSString*) getStorePath;
 -(void) loadAllAttendees;
--(BOOL) saveAllAttendees;
+-(BOOL) save;
 -(Attendee*) createAttendee;
 -(void) removeAttendee:(Attendee*) attendee;
 
