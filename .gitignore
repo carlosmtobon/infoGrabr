@@ -6,3 +6,7 @@
 #
 # Pods/
 
+.DS_Store
+InfoGrabr.xcodeproj/project.xcworkspace/xcuserdata/
+InfoGrabr.xcodeproj/xcuserdata/
+
