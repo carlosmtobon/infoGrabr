@@ -2,7 +2,7 @@
 //  QuestionnaireViewController.m
 //  InfoGrabr
 //
-//  Created by patrick ramiro halsall on 4/12/14.
+//  Created by patrick ramiro halsall on 4/14/14.
 //  Copyright (c) 2014 Florida International University. All rights reserved.
 //
 
@@ -23,7 +23,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)didReceiveMemoryWarning
@@ -32,8 +32,7 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)viewDidLayoutSubviews
-{
+-(void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
     [self.scrollView layoutIfNeeded];
     self.scrollView.contentSize = self.contentView.bounds.size;
