@@ -2,7 +2,7 @@
 //  Conference.h
 //  InfoGrabr
 //
-//  Created by Carlos Tobon on 4/13/14.
+//  Created by Charles on 4/18/14.
 //  Copyright (c) 2014 Florida International University. All rights reserved.
 //
 
@@ -13,8 +13,8 @@
 
 @interface Conference : NSManagedObject
 
-@property (nonatomic, retain) NSString * confName;
 @property (nonatomic, retain) NSDate * confDate;
+@property (nonatomic, retain) NSString * confName;
 @property (nonatomic, retain) NSSet *attendees;
 @end
 

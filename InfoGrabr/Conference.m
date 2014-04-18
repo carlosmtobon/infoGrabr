@@ -2,7 +2,7 @@
 //  Conference.m
 //  InfoGrabr
 //
-//  Created by Carlos Tobon on 4/13/14.
+//  Created by Charles on 4/18/14.
 //  Copyright (c) 2014 Florida International University. All rights reserved.
 //
 
@@ -12,8 +12,8 @@
 
 @implementation Conference
 
-@dynamic confName;
 @dynamic confDate;
+@dynamic confName;
 @dynamic attendees;
 
 @end

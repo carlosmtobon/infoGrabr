@@ -2,34 +2,32 @@
 //  Attendee.m
 //  InfoGrabr
 //
-//  Created by Carlos Tobon on 4/13/14.
+//  Created by Charles on 4/18/14.
 //  Copyright (c) 2014 Florida International University. All rights reserved.
 //
 
 #import "Attendee.h"
-#import "Conference.h"
 
 
 @implementation Attendee
 
+@dynamic address;
+@dynamic cgtServices;
+@dynamic city;
+@dynamic company;
+@dynamic confId;
+@dynamic country;
+@dynamic email;
+@dynamic extraInfo;
 @dynamic firstName;
 @dynamic lastName;
-@dynamic organization;
-@dynamic cgtServices;
-@dynamic projectTimeframe;
-@dynamic company;
-@dynamic office;
-@dynamic address;
-@dynamic city;
-@dynamic state;
-@dynamic zipcode;
-@dynamic country;
 @dynamic membership;
+@dynamic office;
+@dynamic organization;
 @dynamic phone1;
 @dynamic phone2;
-@dynamic email;
-@dynamic confId;
-@dynamic extraInfo;
-@dynamic conferences;
+@dynamic projectTimeframe;
+@dynamic state;
+@dynamic zipcode;
 
 @end
