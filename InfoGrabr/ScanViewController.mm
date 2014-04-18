@@ -16,6 +16,23 @@
     if (self) {
         self.title = NSLocalizedString(@"First", @"First");
         self.tabBarItem.image = [UIImage imageNamed:@"first"];
+        /*store = [[AttendeeStore alloc] init];
+        Conference* current = [store createConference];
+        store.currentConference = current;
+        Attendee* att1 = [store createAttendee];
+        att1.firstName = @"Carlos";
+        Attendee* att2 = [store createAttendee];
+        att2.firstName = @"Enio";
+        if ([store save]) {
+            NSLog(@"Saved");
+        }
+NSArray* allConf = [store allConferences];
+for(Conference* c in allConf) {
+    for (Attendee* a in c.attendees) {
+        NSLog(@"%@", a.firstName);
+    }
+}
+*/
     }
     return self;
 }

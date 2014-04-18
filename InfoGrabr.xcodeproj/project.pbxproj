@@ -33,6 +33,11 @@
 		5694FDDA18F8188B0061A991 /* ScanViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5694FDD818F8188B0061A991 /* ScanViewController.mm */; };
 		5694FDDB18F8188B0061A991 /* ScanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5694FDD918F8188B0061A991 /* ScanViewController.xib */; };
 		5694FDDD18F823A80061A991 /* beep-beep.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 5694FDDC18F823A70061A991 /* beep-beep.aiff */; };
+		5694FDDF18F9B1140061A991 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5694FDDE18F9B1140061A991 /* CoreData.framework */; };
+		5694FDE218F9B14E0061A991 /* InfoGrabr.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5694FDE018F9B14E0061A991 /* InfoGrabr.xcdatamodeld */; };
+		5694FDF018FAE6C10061A991 /* AttendeeStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 5694FDEF18FAE6C10061A991 /* AttendeeStore.m */; };
+		5694FDFC1901DE310061A991 /* Attendee.m in Sources */ = {isa = PBXBuildFile; fileRef = 5694FDFB1901DE300061A991 /* Attendee.m */; };
+		5694FDFF1901DE660061A991 /* Conference.m in Sources */ = {isa = PBXBuildFile; fileRef = 5694FDFE1901DE660061A991 /* Conference.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +97,14 @@
 		5694FDD818F8188B0061A991 /* ScanViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ScanViewController.mm; sourceTree = "<group>"; };
 		5694FDD918F8188B0061A991 /* ScanViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScanViewController.xib; sourceTree = "<group>"; };
 		5694FDDC18F823A70061A991 /* beep-beep.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = "beep-beep.aiff"; sourceTree = "<group>"; };
+		5694FDDE18F9B1140061A991 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		5694FDE118F9B14E0061A991 /* InfoGrabr.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = InfoGrabr.xcdatamodel; sourceTree = "<group>"; };
+		5694FDEE18FAE6C10061A991 /* AttendeeStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttendeeStore.h; sourceTree = "<group>"; };
+		5694FDEF18FAE6C10061A991 /* AttendeeStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttendeeStore.m; sourceTree = "<group>"; };
+		5694FDFA1901DE300061A991 /* Attendee.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Attendee.h; sourceTree = "<group>"; };
+		5694FDFB1901DE300061A991 /* Attendee.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Attendee.m; sourceTree = "<group>"; };
+		5694FDFD1901DE660061A991 /* Conference.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Conference.h; sourceTree = "<group>"; };
+		5694FDFE1901DE660061A991 /* Conference.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Conference.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +112,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5694FDDF18F9B1140061A991 /* CoreData.framework in Frameworks */,
 				568FCEF418F787C9002D65F3 /* libZXingWidget.a in Frameworks */,
 				568FCEDE18F7849E002D65F3 /* AddressBook.framework in Frameworks */,
 				568FCEDF18F7849E002D65F3 /* AddressBookUI.framework in Frameworks */,
@@ -137,6 +151,7 @@
 		568FCE9418F780C6002D65F3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5694FDDE18F9B1140061A991 /* CoreData.framework */,
 				568FCEDC18F7849E002D65F3 /* AddressBook.framework */,
 				568FCEDD18F7849E002D65F3 /* AddressBookUI.framework */,
 				568FCEDA18F78492002D65F3 /* libiconv.dylib */,
@@ -154,19 +169,17 @@
 		568FCE9B18F780C6002D65F3 /* InfoGrabr */ = {
 			isa = PBXGroup;
 			children = (
+				5694FDED18FAE5AF0061A991 /* CoreData */,
+				5694FDE818FADF8D0061A991 /* Models */,
+				5694FDE918FADF940061A991 /* Views */,
+				5694FDE718FADF5B0061A991 /* Controllers */,
 				5694FDDC18F823A70061A991 /* beep-beep.aiff */,
-				5694FDD718F8188B0061A991 /* ScanViewController.h */,
-				5694FDD818F8188B0061A991 /* ScanViewController.mm */,
-				5694FDD918F8188B0061A991 /* ScanViewController.xib */,
 				568FCEA418F780C7002D65F3 /* InfoGrabrAppDelegate.h */,
 				568FCEA518F780C7002D65F3 /* InfoGrabrAppDelegate.m */,
 				568FCEB018F780C7002D65F3 /* first.png */,
 				568FCEB218F780C7002D65F3 /* first@2x.png */,
-				568FCEB418F780C7002D65F3 /* InfoGrabrSecondViewController.h */,
-				568FCEB518F780C7002D65F3 /* InfoGrabrSecondViewController.m */,
 				568FCEB718F780C7002D65F3 /* second.png */,
 				568FCEB918F780C7002D65F3 /* second@2x.png */,
-				568FCEBE18F780C7002D65F3 /* InfoGrabrSecondViewController.xib */,
 				568FCE9C18F780C6002D65F3 /* Supporting Files */,
 			);
 			path = InfoGrabr;
@@ -193,6 +206,47 @@
 				568FCEF118F787B5002D65F3 /* ZXingTests.octest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		5694FDE718FADF5B0061A991 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				568FCEB418F780C7002D65F3 /* InfoGrabrSecondViewController.h */,
+				568FCEB518F780C7002D65F3 /* InfoGrabrSecondViewController.m */,
+				5694FDD718F8188B0061A991 /* ScanViewController.h */,
+				5694FDD818F8188B0061A991 /* ScanViewController.mm */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		5694FDE818FADF8D0061A991 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5694FDFD1901DE660061A991 /* Conference.h */,
+				5694FDFE1901DE660061A991 /* Conference.m */,
+				5694FDFA1901DE300061A991 /* Attendee.h */,
+				5694FDFB1901DE300061A991 /* Attendee.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		5694FDE918FADF940061A991 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5694FDD918F8188B0061A991 /* ScanViewController.xib */,
+				568FCEBE18F780C7002D65F3 /* InfoGrabrSecondViewController.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		5694FDED18FAE5AF0061A991 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				5694FDE018F9B14E0061A991 /* InfoGrabr.xcdatamodeld */,
+				5694FDEE18FAE6C10061A991 /* AttendeeStore.h */,
+				5694FDEF18FAE6C10061A991 /* AttendeeStore.m */,
+			);
+			name = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,6 +350,10 @@
 				568FCEA618F780C7002D65F3 /* InfoGrabrAppDelegate.m in Sources */,
 				568FCEB618F780C7002D65F3 /* InfoGrabrSecondViewController.m in Sources */,
 				5694FDDA18F8188B0061A991 /* ScanViewController.mm in Sources */,
+				5694FDE218F9B14E0061A991 /* InfoGrabr.xcdatamodeld in Sources */,
+				5694FDF018FAE6C10061A991 /* AttendeeStore.m in Sources */,
+				5694FDFC1901DE310061A991 /* Attendee.m in Sources */,
+				5694FDFF1901DE660061A991 /* Conference.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,6 +505,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		5694FDE018F9B14E0061A991 /* InfoGrabr.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5694FDE118F9B14E0061A991 /* InfoGrabr.xcdatamodel */,
+			);
+			currentVersion = 5694FDE118F9B14E0061A991 /* InfoGrabr.xcdatamodel */;
+			path = InfoGrabr.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 568FCE8A18F780C6002D65F3 /* Project object */;
 }

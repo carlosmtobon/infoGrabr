@@ -11,7 +11,7 @@
 
 @implementation AttendeeStore
 
-@synthesize allAttendees;
+@synthesize currentConference;
 @synthesize allConferences;
 @synthesize ctx;
 @synthesize model;
@@ -30,10 +30,10 @@
             stringByAppendingPathComponent:@"store.data"];
 }
 
-- (void)loadAllAttendees {
-    if (!allAttendees) {
+- (void)loadAllConferences {
+    if (!allConferences) {
         NSFetchRequest* request = [[NSFetchRequest alloc] init];
-        NSEntityDescription* e = [NSEntityDescription insertNewObjectForEntityForName:@"Attendee" inManagedObjectContext:ctx];
+        NSEntityDescription* e = [[model entitiesByName] objectForKey:@"Conference"];
         request.entity = e;
         
         NSError* error = nil;
@@ -42,7 +42,7 @@
             [NSException raise:@"Fetch failed" format:@"Reason: %@", [error localizedDescription]];
         }
         
-        allAttendees = [[NSMutableArray alloc] initWithArray:result];
+        allConferences = [[NSMutableArray alloc] initWithArray:result];
     }
 }
 
@@ -64,7 +64,7 @@
         ctx = [[NSManagedObjectContext alloc] init];
         [ctx setPersistentStoreCoordinator:psc];
         [ctx setUndoManager:nil];
-        [self loadAllAttendees];
+        [self loadAllConferences];
     }
     return self;
 }
@@ -82,13 +82,21 @@
 
 -(Attendee*) createAttendee {
     Attendee* attendee = [NSEntityDescription insertNewObjectForEntityForName:@"Attendee" inManagedObjectContext:ctx];
-    [allAttendees addObject:attendee];
+    [currentConference addAttendeesObject:attendee];
     return attendee;
 }
 
+-(Conference *)createConference {
+    Conference* conf = [NSEntityDescription insertNewObjectForEntityForName:@"Conference" inManagedObjectContext:ctx];
+    [allConferences addObject:conf];
+    return conf;
+}
+
 - (void)removeAttendee:(Attendee *)attendee {
-    [self.ctx deleteObject:attendee];
-    [self.allAttendees removeObjectIdenticalTo:attendee];
+    [ctx deleteObject:attendee];
+    NSMutableSet *mutableSet = [NSMutableSet setWithSet:currentConference.attendees];
+    [mutableSet removeObject:attendee];
+    currentConference.attendees = mutableSet;
 }
 
 @end

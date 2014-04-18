@@ -10,17 +10,19 @@
 #import <CoreData/CoreData.h>
 
 #import "Attendee.h"
+#import "Conference.h"
 
 @interface AttendeeStore : NSObject
 
-@property (nonatomic) NSMutableArray* allAttendees;
+@property (nonatomic, strong) Conference* currentConference;
 @property (nonatomic, strong) NSMutableArray* allConferences;
 @property (nonatomic, strong) NSManagedObjectContext* ctx;
 @property (nonatomic, strong) NSManagedObjectModel* model;
 
 -(NSString*) getStorePath;
--(void) loadAllAttendees;
+-(void) loadAllConferences;
 -(BOOL) save;
+-(Conference*) createConference;
 -(Attendee*) createAttendee;
 -(void) removeAttendee:(Attendee*) attendee;
 
