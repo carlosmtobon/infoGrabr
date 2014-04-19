@@ -1,6 +1,7 @@
 
 #import <MultiFormatReader.h>
 
+#import "InfoGrabrAppDelegate.h"
 #import "AttendeeStore.h"
 #import "ScanViewController.h"
 #import "QuestionnaireViewController.h"
@@ -46,10 +47,19 @@
 -(void)zxingController:(ZXingWidgetController *)controller didScanResult:(NSString *)result {
     NSLog(@"%@", result);
     [self dismissViewControllerAnimated:YES completion:nil];
-    QuestionnaireViewController* qvc = [self.tabBarController.viewControllers objectAtIndex:1];
-    self.tabBarController.selectedViewController = qvc;
-
+    InfoGrabrAppDelegate* appdelegate = (InfoGrabrAppDelegate*)[[UIApplication sharedApplication] delegate];
+    AttendeeStore* store = appdelegate.attendeeStore;
+    NSArray* tokens = [result componentsSeparatedByString:@"$"];
+    Attendee* attendee = [store createAttendeeForConf:nil];
+    attendee.confId = tokens[0];
+    attendee.firstName = tokens[1];
+    attendee.lastName = tokens[2];
+    attendee.organization = tokens[3];
     
+    QuestionnaireViewController* qvc = [self.tabBarController.viewControllers objectAtIndex:1];
+    
+    // TODO set qvc attendee to attendee
+    self.tabBarController.selectedViewController = qvc;
 }
 
 - (void)zxingControllerDidCancel:(ZXingWidgetController *)controller {
