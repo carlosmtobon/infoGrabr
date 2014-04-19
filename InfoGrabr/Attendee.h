@@ -2,13 +2,14 @@
 //  Attendee.h
 //  InfoGrabr
 //
-//  Created by Charles on 4/18/14.
+//  Created by Charles on 4/19/14.
 //  Copyright (c) 2014 Florida International University. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
+@class Conference;
 
 @interface Attendee : NSManagedObject
 
@@ -30,5 +31,6 @@
 @property (nonatomic, retain) NSString * projectTimeframe;
 @property (nonatomic, retain) NSString * state;
 @property (nonatomic, retain) NSString * zipcode;
+@property (nonatomic, retain) Conference *conf;
 
 @end

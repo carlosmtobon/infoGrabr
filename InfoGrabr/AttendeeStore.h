@@ -25,5 +25,6 @@
 -(Attendee*) createAttendeeForConf:(Conference*) conf;
 -(void) removeConference: (Conference*) conf;
 -(void) removeAttendee:(Attendee*) attendee FromConf: (Conference*) conf;
+-(void) removeDatabase;
 
 @end
