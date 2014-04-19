@@ -8,10 +8,20 @@
 
 #import <UIKit/UIKit.h>
 
-@interface QuestionnaireViewController : UIViewController
+@class QuestionnaireServices;
+
+@interface QuestionnaireViewController : UIViewController <UIPickerViewDataSource,UIPickerViewDelegate>
+{
+    NSInteger originalCount;
+    QuestionnaireServices *sharedServices;
+}
 
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @property (strong, nonatomic) IBOutlet UIView *contentView;
+
+@property (strong, nonatomic) IBOutlet UIPickerView *servicesPicker;
+
+@property (strong, nonatomic) NSMutableArray *services;
 
 @end

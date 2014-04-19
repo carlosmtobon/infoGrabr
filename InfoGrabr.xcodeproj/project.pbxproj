@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		11B1142518FCB0E8002772B1 /* QuestionnaireViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11B1142318FCB0E8002772B1 /* QuestionnaireViewController.m */; };
-		11B1142618FCB0E8002772B1 /* QuestionnaireViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11B1142418FCB0E8002772B1 /* QuestionnaireViewController.xib */; };
+		1137116718FC941C009B17DB /* QuestionnaireViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1137116618FC941C009B17DB /* QuestionnaireViewController.xib */; };
+		1149C3A518F9B54900112A65 /* QuestionnaireViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1149C3A418F9B54900112A65 /* QuestionnaireViewController.m */; };
 		568FCE9618F780C6002D65F3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 568FCE9518F780C6002D65F3 /* UIKit.framework */; };
 		568FCE9818F780C6002D65F3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 568FCE9718F780C6002D65F3 /* Foundation.framework */; };
 		568FCE9A18F780C6002D65F3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 568FCE9918F780C6002D65F3 /* CoreGraphics.framework */; };
@@ -60,9 +60,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		11B1142218FCB0E8002772B1 /* QuestionnaireViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionnaireViewController.h; sourceTree = "<group>"; };
-		11B1142318FCB0E8002772B1 /* QuestionnaireViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionnaireViewController.m; sourceTree = "<group>"; };
-		11B1142418FCB0E8002772B1 /* QuestionnaireViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuestionnaireViewController.xib; sourceTree = "<group>"; };
+		1137116618FC941C009B17DB /* QuestionnaireViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuestionnaireViewController.xib; sourceTree = "<group>"; };
+		1149C3A318F9B54900112A65 /* QuestionnaireViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionnaireViewController.h; sourceTree = "<group>"; };
+		1149C3A418F9B54900112A65 /* QuestionnaireViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionnaireViewController.m; sourceTree = "<group>"; };
 		568FCE9218F780C6002D65F3 /* InfoGrabr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InfoGrabr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		568FCE9518F780C6002D65F3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		568FCE9718F780C6002D65F3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -154,15 +154,15 @@
 		568FCE9B18F780C6002D65F3 /* InfoGrabr */ = {
 			isa = PBXGroup;
 			children = (
+				1149C3A318F9B54900112A65 /* QuestionnaireViewController.h */,
+				1149C3A418F9B54900112A65 /* QuestionnaireViewController.m */,
+				1137116618FC941C009B17DB /* QuestionnaireViewController.xib */,
 				5694FDDC18F823A70061A991 /* beep-beep.aiff */,
 				5694FDD718F8188B0061A991 /* ScanViewController.h */,
 				5694FDD818F8188B0061A991 /* ScanViewController.mm */,
 				5694FDD918F8188B0061A991 /* ScanViewController.xib */,
 				568FCEA418F780C7002D65F3 /* InfoGrabrAppDelegate.h */,
 				568FCEA518F780C7002D65F3 /* InfoGrabrAppDelegate.m */,
-				11B1142218FCB0E8002772B1 /* QuestionnaireViewController.h */,
-				11B1142318FCB0E8002772B1 /* QuestionnaireViewController.m */,
-				11B1142418FCB0E8002772B1 /* QuestionnaireViewController.xib */,
 				568FCEB018F780C7002D65F3 /* first.png */,
 				568FCEB218F780C7002D65F3 /* first@2x.png */,
 				568FCEB718F780C7002D65F3 /* second.png */,
@@ -281,7 +281,7 @@
 				568FCEBA18F780C7002D65F3 /* second@2x.png in Resources */,
 				5694FDDB18F8188B0061A991 /* ScanViewController.xib in Resources */,
 				5694FDDD18F823A80061A991 /* beep-beep.aiff in Resources */,
-				11B1142618FCB0E8002772B1 /* QuestionnaireViewController.xib in Resources */,
+				1137116718FC941C009B17DB /* QuestionnaireViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,7 +295,7 @@
 				568FCEA218F780C6002D65F3 /* main.mm in Sources */,
 				568FCEA618F780C7002D65F3 /* InfoGrabrAppDelegate.m in Sources */,
 				5694FDDA18F8188B0061A991 /* ScanViewController.mm in Sources */,
-				11B1142518FCB0E8002772B1 /* QuestionnaireViewController.m in Sources */,
+				1149C3A518F9B54900112A65 /* QuestionnaireViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,9 +392,8 @@
 					"lib/iphone/ZXingWidget/Classes/**",
 				);
 				INFOPLIST_FILE = "InfoGrabr/InfoGrabr-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -412,9 +411,8 @@
 					"lib/iphone/ZXingWidget/Classes/**",
 				);
 				INFOPLIST_FILE = "InfoGrabr/InfoGrabr-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
