@@ -11,6 +11,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.attendeeStore = [[AttendeeStore alloc] init];
     // Override point for customization after application launch.
     UIViewController *viewController1 = [[ScanViewController alloc] initWithNibName:@"ScanViewController" bundle:nil];
     UIViewController *viewController2 = [[QuestionnaireViewController alloc] initWithNibName:@"QuestionnaireViewController" bundle:nil];
