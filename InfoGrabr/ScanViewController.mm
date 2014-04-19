@@ -18,6 +18,17 @@
     if (self) {
         self.title = NSLocalizedString(@"Scan", @"Scan");
         self.tabBarItem.image = [UIImage imageNamed:@"first"];
+        /*AttendeeStore* store = [(InfoGrabrAppDelegate*)[[UIApplication sharedApplication]delegate] attendeeStore];
+        Conference* c1 = [store createConference];
+        Conference* c2 = [store createConference];
+        c1.confName = @"Conference 1";
+        c2.confName = @"Conference 2";
+        Attendee* a1 = [store createAttendeeForConf:c1];
+        Attendee* a2 = [store createAttendeeForConf:c2];
+        a1.firstName = @"Carlos";
+        a2.firstName = @"Natalya";
+        [store save];*/
+        
     }
     return self;
 }
@@ -50,7 +61,7 @@
     InfoGrabrAppDelegate* appdelegate = (InfoGrabrAppDelegate*)[[UIApplication sharedApplication] delegate];
     AttendeeStore* store = appdelegate.attendeeStore;
     NSArray* tokens = [result componentsSeparatedByString:@"$"];
-    Attendee* attendee = [store createAttendeeForConf:nil];
+    Attendee* attendee = [store createAttendee];
     attendee.confId = tokens[0];
     attendee.firstName = tokens[1];
     attendee.lastName = tokens[2];

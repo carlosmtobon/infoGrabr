@@ -11,7 +11,7 @@
 
 @implementation AttendeeStore
 
-@synthesize allConferences;
+@synthesize allAttendees;
 @synthesize ctx;
 @synthesize model;
 
@@ -29,10 +29,12 @@
             stringByAppendingPathComponent:@"store.data"];
 }
 
-- (void)loadAllConferences {
-    if (!allConferences) {
+- (void)loadAllAttendees {
+    if (!allAttendees) {
+        // TODO implement JSON parsing
+        
         NSFetchRequest* request = [[NSFetchRequest alloc] init];
-        NSEntityDescription* e = [[model entitiesByName] objectForKey:@"Conference"];
+        NSEntityDescription* e = [[model entitiesByName] objectForKey:@"Attendee"];
         request.entity = e;
         
         NSError* error = nil;
@@ -41,7 +43,7 @@
             [NSException raise:@"Fetch failed" format:@"Reason: %@", [error localizedDescription]];
         }
         
-        allConferences = [[NSMutableArray alloc] initWithArray:result];
+        allAttendees = [[NSMutableArray alloc] initWithArray:result];
     }
 }
 
@@ -63,7 +65,7 @@
         ctx = [[NSManagedObjectContext alloc] init];
         [ctx setPersistentStoreCoordinator:psc];
         [ctx setUndoManager:nil];
-        [self loadAllConferences];
+        [self loadAllAttendees];
     }
     return self;
 }
@@ -79,28 +81,14 @@
     return successful;
 }
 
--(Attendee*) createAttendeeForConf:(Conference *)conf {
-    Attendee* attendee = [NSEntityDescription insertNewObjectForEntityForName:@"Attendee" inManagedObjectContext:ctx];
-    [conf addAttendeesObject:attendee];
+-(Attendee*) createAttendee{
+    Attendee* attendee = [NSEntityDescription insertNewObjectForEntityForName:@"Attendee" inManagedObjectContext:ctx];;
     return attendee;
 }
 
--(Conference *)createConference {
-    Conference* conf = [NSEntityDescription insertNewObjectForEntityForName:@"Conference" inManagedObjectContext:ctx];
-    [allConferences addObject:conf];
-    return conf;
-}
 
-- (void)removeAttendee:(Attendee *)attendee FromConf:(Conference *)conf {
+- (void)removeAttendee:(Attendee *)attendee {
     [ctx deleteObject:attendee];
-    NSMutableSet *mutableSet = [NSMutableSet setWithSet:conf.attendees];
-    [mutableSet removeObject:attendee];
-    conf.attendees = mutableSet;
-}
-
-- (void)removeConference:(Conference *)conf {
-    [ctx deleteObject:conf];
-    [allConferences removeObject:conf];
 }
 
 -(void) removeDatabase {
