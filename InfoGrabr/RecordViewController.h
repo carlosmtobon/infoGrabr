@@ -2,6 +2,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RecordViewController : UIViewController
+#import "AttendeeStore.h"
+
+@interface RecordViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
+
+@property (strong, nonatomic) AttendeeStore* attendeeStore;
 
 @end
