@@ -23,10 +23,8 @@
 		568FCEAC18F780C7002D65F3 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 568FCEAB18F780C7002D65F3 /* Default-568h@2x.png */; };
 		568FCEB118F780C7002D65F3 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = 568FCEB018F780C7002D65F3 /* first.png */; };
 		568FCEB318F780C7002D65F3 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 568FCEB218F780C7002D65F3 /* first@2x.png */; };
-		568FCEB618F780C7002D65F3 /* InfoGrabrSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 568FCEB518F780C7002D65F3 /* InfoGrabrSecondViewController.m */; };
 		568FCEB818F780C7002D65F3 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 568FCEB718F780C7002D65F3 /* second.png */; };
 		568FCEBA18F780C7002D65F3 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 568FCEB918F780C7002D65F3 /* second@2x.png */; };
-		568FCEC018F780C7002D65F3 /* InfoGrabrSecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 568FCEBE18F780C7002D65F3 /* InfoGrabrSecondViewController.xib */; };
 		568FCED318F7846C002D65F3 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 568FCED218F7846C002D65F3 /* AVFoundation.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		568FCED518F78474002D65F3 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 568FCED418F78474002D65F3 /* AudioToolbox.framework */; };
 		568FCED718F78480002D65F3 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 568FCED618F78480002D65F3 /* CoreVideo.framework */; };
@@ -43,6 +41,8 @@
 		5694FDF018FAE6C10061A991 /* AttendeeStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 5694FDEF18FAE6C10061A991 /* AttendeeStore.m */; };
 		569CA768190300D1009CB655 /* Attendee.m in Sources */ = {isa = PBXBuildFile; fileRef = 569CA767190300D1009CB655 /* Attendee.m */; };
 		569CA76B190300FA009CB655 /* Conference.m in Sources */ = {isa = PBXBuildFile; fileRef = 569CA76A190300F9009CB655 /* Conference.m */; };
+		569CA76F190319CF009CB655 /* RecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 569CA76D190319CD009CB655 /* RecordViewController.m */; };
+		569CA770190319CF009CB655 /* RecordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 569CA76E190319CE009CB655 /* RecordViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,11 +92,8 @@
 		568FCEAB18F780C7002D65F3 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		568FCEB018F780C7002D65F3 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
 		568FCEB218F780C7002D65F3 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
-		568FCEB418F780C7002D65F3 /* InfoGrabrSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfoGrabrSecondViewController.h; sourceTree = "<group>"; };
-		568FCEB518F780C7002D65F3 /* InfoGrabrSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfoGrabrSecondViewController.m; sourceTree = "<group>"; };
 		568FCEB718F780C7002D65F3 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
 		568FCEB918F780C7002D65F3 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
-		568FCEBF18F780C7002D65F3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/InfoGrabrSecondViewController.xib; sourceTree = "<group>"; };
 		568FCED218F7846C002D65F3 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		568FCED418F78474002D65F3 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		568FCED618F78480002D65F3 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
@@ -117,6 +114,9 @@
 		569CA767190300D1009CB655 /* Attendee.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Attendee.m; sourceTree = "<group>"; };
 		569CA769190300F9009CB655 /* Conference.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Conference.h; sourceTree = "<group>"; };
 		569CA76A190300F9009CB655 /* Conference.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Conference.m; sourceTree = "<group>"; };
+		569CA76C190319CD009CB655 /* RecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordViewController.h; sourceTree = "<group>"; };
+		569CA76D190319CD009CB655 /* RecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordViewController.m; sourceTree = "<group>"; };
+		569CA76E190319CE009CB655 /* RecordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecordViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,12 +225,12 @@
 		5694FDE718FADF5B0061A991 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				568FCEB418F780C7002D65F3 /* InfoGrabrSecondViewController.h */,
-				568FCEB518F780C7002D65F3 /* InfoGrabrSecondViewController.m */,
 				11801BBB1902E71300223E27 /* QuestionnaireViewController.m */,
 				11801BBD1902E72500223E27 /* QuestionnaireViewController.h */,
 				5694FDD718F8188B0061A991 /* ScanViewController.h */,
 				5694FDD818F8188B0061A991 /* ScanViewController.mm */,
+				569CA76C190319CD009CB655 /* RecordViewController.h */,
+				569CA76D190319CD009CB655 /* RecordViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -251,8 +251,8 @@
 		5694FDE918FADF940061A991 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				569CA76E190319CE009CB655 /* RecordViewController.xib */,
 				5694FDD918F8188B0061A991 /* ScanViewController.xib */,
-				568FCEBE18F780C7002D65F3 /* InfoGrabrSecondViewController.xib */,
 				11801BB91902E70800223E27 /* QuestionnaireViewController.xib */,
 			);
 			name = Views;
@@ -352,12 +352,12 @@
 				568FCEB318F780C7002D65F3 /* first@2x.png in Resources */,
 				568FCEB818F780C7002D65F3 /* second.png in Resources */,
 				568FCEBA18F780C7002D65F3 /* second@2x.png in Resources */,
-				568FCEC018F780C7002D65F3 /* InfoGrabrSecondViewController.xib in Resources */,
 				5694FDDB18F8188B0061A991 /* ScanViewController.xib in Resources */,
 				5694FDDD18F823A80061A991 /* beep-beep.aiff in Resources */,
 				11801BB51902E6CC00223E27 /* checkbox.png in Resources */,
 				11801BB81902E6D300223E27 /* checkbox-checked.png in Resources */,
 				11801BBA1902E70800223E27 /* QuestionnaireViewController.xib in Resources */,
+				569CA770190319CF009CB655 /* RecordViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,7 +370,6 @@
 			files = (
 				568FCEA218F780C6002D65F3 /* main.mm in Sources */,
 				568FCEA618F780C7002D65F3 /* InfoGrabrAppDelegate.m in Sources */,
-				568FCEB618F780C7002D65F3 /* InfoGrabrSecondViewController.m in Sources */,
 				5694FDDA18F8188B0061A991 /* ScanViewController.mm in Sources */,
 				5694FDE218F9B14E0061A991 /* InfoGrabr.xcdatamodeld in Sources */,
 				5694FDF018FAE6C10061A991 /* AttendeeStore.m in Sources */,
@@ -378,6 +377,7 @@
 				11801BC01902E76F00223E27 /* QuestionnaireServices.m in Sources */,
 				569CA768190300D1009CB655 /* Attendee.m in Sources */,
 				569CA76B190300FA009CB655 /* Conference.m in Sources */,
+				569CA76F190319CF009CB655 /* RecordViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,14 +398,6 @@
 				568FCE9F18F780C6002D65F3 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		568FCEBE18F780C7002D65F3 /* InfoGrabrSecondViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				568FCEBF18F780C7002D65F3 /* en */,
-			);
-			name = InfoGrabrSecondViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

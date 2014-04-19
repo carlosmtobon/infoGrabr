@@ -1,10 +1,3 @@
-//
-//  RecordViewController.m
-//  InfoGrabr
-//
-//  Created by Charles on 4/19/14.
-//  Copyright (c) 2014 Florida International University. All rights reserved.
-//
 
 #import "RecordViewController.h"
 
@@ -19,6 +12,8 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        self.title = NSLocalizedString(@"Records", @"Records");
+        self.tabBarItem.image = [UIImage imageNamed:@"first"];
     }
     return self;
 }
