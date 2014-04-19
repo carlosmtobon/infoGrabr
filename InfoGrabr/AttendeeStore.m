@@ -11,7 +11,6 @@
 
 @implementation AttendeeStore
 
-@synthesize currentConference;
 @synthesize allConferences;
 @synthesize ctx;
 @synthesize model;
@@ -80,9 +79,9 @@
     return successful;
 }
 
--(Attendee*) createAttendee {
+-(Attendee*) createAttendeeForConf:(Conference *)conf {
     Attendee* attendee = [NSEntityDescription insertNewObjectForEntityForName:@"Attendee" inManagedObjectContext:ctx];
-    [currentConference addAttendeesObject:attendee];
+    [conf addAttendeesObject:attendee];
     return attendee;
 }
 
@@ -92,11 +91,16 @@
     return conf;
 }
 
-- (void)removeAttendee:(Attendee *)attendee {
+- (void)removeAttendee:(Attendee *)attendee FromConf:(Conference *)conf {
     [ctx deleteObject:attendee];
-    NSMutableSet *mutableSet = [NSMutableSet setWithSet:currentConference.attendees];
+    NSMutableSet *mutableSet = [NSMutableSet setWithSet:conf.attendees];
     [mutableSet removeObject:attendee];
-    currentConference.attendees = mutableSet;
+    conf.attendees = mutableSet;
+}
+
+- (void)removeConference:(Conference *)conf {
+    [ctx deleteObject:conf];
+    [allConferences removeObject:conf];
 }
 
 @end
