@@ -19,14 +19,15 @@
         <attribute name="projectTimeframe" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="state" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="zipcode" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="conf" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Conference" inverseName="attendees" inverseEntity="Conference" syncable="YES"/>
     </entity>
     <entity name="Conference" representedClassName="Conference" syncable="YES">
         <attribute name="confDate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="confName" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="attendees" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Attendee" syncable="YES"/>
+        <relationship name="attendees" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Attendee" inverseName="conf" inverseEntity="Attendee" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Attendee" positionX="160" positionY="192" width="128" height="315"/>
+        <element name="Attendee" positionX="160" positionY="192" width="128" height="330"/>
         <element name="Conference" positionX="160" positionY="192" width="128" height="90"/>
     </elements>
 </model>
