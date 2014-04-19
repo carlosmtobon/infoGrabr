@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class Conference;
 
 @interface Attendee : NSManagedObject
 
@@ -31,6 +30,8 @@
 @property (nonatomic, retain) NSString * projectTimeframe;
 @property (nonatomic, retain) NSString * state;
 @property (nonatomic, retain) NSString * zipcode;
-@property (nonatomic, retain) Conference *conf;
+@property (nonatomic, retain) NSString * confName;
+@property (nonatomic, retain) NSDate * dateCreated;
+@property (nonatomic, retain) NSNumber * lykerNum;
 
 @end

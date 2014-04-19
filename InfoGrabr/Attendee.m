@@ -7,7 +7,6 @@
 //
 
 #import "Attendee.h"
-#import "Conference.h"
 
 
 @implementation Attendee
@@ -30,6 +29,8 @@
 @dynamic projectTimeframe;
 @dynamic state;
 @dynamic zipcode;
-@dynamic conf;
+@dynamic confName;
+@dynamic dateCreated;
+@dynamic lykerNum;
 
 @end
