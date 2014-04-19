@@ -2,11 +2,12 @@
 //  Attendee.m
 //  InfoGrabr
 //
-//  Created by Charles on 4/18/14.
+//  Created by Charles on 4/19/14.
 //  Copyright (c) 2014 Florida International University. All rights reserved.
 //
 
 #import "Attendee.h"
+#import "Conference.h"
 
 
 @implementation Attendee
@@ -29,5 +30,6 @@
 @dynamic projectTimeframe;
 @dynamic state;
 @dynamic zipcode;
+@dynamic conf;
 
 @end
