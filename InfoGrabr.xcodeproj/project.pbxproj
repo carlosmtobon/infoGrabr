@@ -41,8 +41,8 @@
 		5694FDDF18F9B1140061A991 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5694FDDE18F9B1140061A991 /* CoreData.framework */; };
 		5694FDE218F9B14E0061A991 /* InfoGrabr.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5694FDE018F9B14E0061A991 /* InfoGrabr.xcdatamodeld */; };
 		5694FDF018FAE6C10061A991 /* AttendeeStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 5694FDEF18FAE6C10061A991 /* AttendeeStore.m */; };
-		5694FDFC1901DE310061A991 /* Attendee.m in Sources */ = {isa = PBXBuildFile; fileRef = 5694FDFB1901DE300061A991 /* Attendee.m */; };
-		5694FDFF1901DE660061A991 /* Conference.m in Sources */ = {isa = PBXBuildFile; fileRef = 5694FDFE1901DE660061A991 /* Conference.m */; };
+		569CA768190300D1009CB655 /* Attendee.m in Sources */ = {isa = PBXBuildFile; fileRef = 569CA767190300D1009CB655 /* Attendee.m */; };
+		569CA76B190300FA009CB655 /* Conference.m in Sources */ = {isa = PBXBuildFile; fileRef = 569CA76A190300F9009CB655 /* Conference.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,10 +113,10 @@
 		5694FDE118F9B14E0061A991 /* InfoGrabr.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = InfoGrabr.xcdatamodel; sourceTree = "<group>"; };
 		5694FDEE18FAE6C10061A991 /* AttendeeStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttendeeStore.h; sourceTree = "<group>"; };
 		5694FDEF18FAE6C10061A991 /* AttendeeStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttendeeStore.m; sourceTree = "<group>"; };
-		5694FDFA1901DE300061A991 /* Attendee.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Attendee.h; sourceTree = "<group>"; };
-		5694FDFB1901DE300061A991 /* Attendee.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Attendee.m; sourceTree = "<group>"; };
-		5694FDFD1901DE660061A991 /* Conference.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Conference.h; sourceTree = "<group>"; };
-		5694FDFE1901DE660061A991 /* Conference.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Conference.m; sourceTree = "<group>"; };
+		569CA766190300D1009CB655 /* Attendee.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Attendee.h; sourceTree = "<group>"; };
+		569CA767190300D1009CB655 /* Attendee.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Attendee.m; sourceTree = "<group>"; };
+		569CA769190300F9009CB655 /* Conference.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Conference.h; sourceTree = "<group>"; };
+		569CA76A190300F9009CB655 /* Conference.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Conference.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -238,12 +238,12 @@
 		5694FDE818FADF8D0061A991 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				5694FDFD1901DE660061A991 /* Conference.h */,
-				5694FDFE1901DE660061A991 /* Conference.m */,
+				569CA769190300F9009CB655 /* Conference.h */,
+				569CA76A190300F9009CB655 /* Conference.m */,
+				569CA766190300D1009CB655 /* Attendee.h */,
+				569CA767190300D1009CB655 /* Attendee.m */,
 				11801BBE1902E76900223E27 /* QuestionnaireServices.h */,
 				11801BBF1902E76F00223E27 /* QuestionnaireServices.m */,
-				5694FDFA1901DE300061A991 /* Attendee.h */,
-				5694FDFB1901DE300061A991 /* Attendee.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -374,10 +374,10 @@
 				5694FDDA18F8188B0061A991 /* ScanViewController.mm in Sources */,
 				5694FDE218F9B14E0061A991 /* InfoGrabr.xcdatamodeld in Sources */,
 				5694FDF018FAE6C10061A991 /* AttendeeStore.m in Sources */,
-				5694FDFC1901DE310061A991 /* Attendee.m in Sources */,
-				5694FDFF1901DE660061A991 /* Conference.m in Sources */,
 				11801BBC1902E71300223E27 /* QuestionnaireViewController.m in Sources */,
 				11801BC01902E76F00223E27 /* QuestionnaireServices.m in Sources */,
+				569CA768190300D1009CB655 /* Attendee.m in Sources */,
+				569CA76B190300FA009CB655 /* Conference.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

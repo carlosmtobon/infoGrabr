@@ -103,4 +103,9 @@
     [allConferences removeObject:conf];
 }
 
+-(void) removeDatabase {
+    if([[NSFileManager defaultManager] fileExistsAtPath:self.getStorePath]){
+        [[NSFileManager defaultManager] removeItemAtPath:self.getStorePath error:nil];
+    }
+}
 @end
