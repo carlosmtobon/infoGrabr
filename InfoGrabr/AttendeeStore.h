@@ -14,7 +14,6 @@
 
 @interface AttendeeStore : NSObject
 
-@property (nonatomic, strong) Conference* currentConference;
 @property (nonatomic, strong) NSMutableArray* allConferences;
 @property (nonatomic, strong) NSManagedObjectContext* ctx;
 @property (nonatomic, strong) NSManagedObjectModel* model;
@@ -23,7 +22,8 @@
 -(void) loadAllConferences;
 -(BOOL) save;
 -(Conference*) createConference;
--(Attendee*) createAttendee;
--(void) removeAttendee:(Attendee*) attendee;
+-(Attendee*) createAttendeeForConf:(Conference*) conf;
+-(void) removeConference: (Conference*) conf;
+-(void) removeAttendee:(Attendee*) attendee FromConf: (Conference*) conf;
 
 @end
