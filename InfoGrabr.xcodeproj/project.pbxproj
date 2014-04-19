@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		11801BB51902E6CC00223E27 /* checkbox.png in Resources */ = {isa = PBXBuildFile; fileRef = 11801BB41902E6CC00223E27 /* checkbox.png */; };
+		11801BB81902E6D300223E27 /* checkbox-checked.png in Resources */ = {isa = PBXBuildFile; fileRef = 11801BB71902E6D300223E27 /* checkbox-checked.png */; };
+		11801BBA1902E70800223E27 /* QuestionnaireViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11801BB91902E70800223E27 /* QuestionnaireViewController.xib */; };
+		11801BBC1902E71300223E27 /* QuestionnaireViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11801BBB1902E71300223E27 /* QuestionnaireViewController.m */; };
+		11801BC01902E76F00223E27 /* QuestionnaireServices.m in Sources */ = {isa = PBXBuildFile; fileRef = 11801BBF1902E76F00223E27 /* QuestionnaireServices.m */; };
 		568FCE9618F780C6002D65F3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 568FCE9518F780C6002D65F3 /* UIKit.framework */; };
 		568FCE9818F780C6002D65F3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 568FCE9718F780C6002D65F3 /* Foundation.framework */; };
 		568FCE9A18F780C6002D65F3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 568FCE9918F780C6002D65F3 /* CoreGraphics.framework */; };
@@ -65,6 +70,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		11801BB41902E6CC00223E27 /* checkbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkbox.png; sourceTree = "<group>"; };
+		11801BB71902E6D300223E27 /* checkbox-checked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkbox-checked.png"; sourceTree = "<group>"; };
+		11801BB91902E70800223E27 /* QuestionnaireViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuestionnaireViewController.xib; sourceTree = "<group>"; };
+		11801BBB1902E71300223E27 /* QuestionnaireViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionnaireViewController.m; sourceTree = "<group>"; };
+		11801BBD1902E72500223E27 /* QuestionnaireViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuestionnaireViewController.h; sourceTree = "<group>"; };
+		11801BBE1902E76900223E27 /* QuestionnaireServices.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuestionnaireServices.h; sourceTree = "<group>"; };
+		11801BBF1902E76F00223E27 /* QuestionnaireServices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionnaireServices.m; sourceTree = "<group>"; };
 		568FCE9218F780C6002D65F3 /* InfoGrabr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InfoGrabr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		568FCE9518F780C6002D65F3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		568FCE9718F780C6002D65F3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -176,6 +188,8 @@
 				5694FDDC18F823A70061A991 /* beep-beep.aiff */,
 				568FCEA418F780C7002D65F3 /* InfoGrabrAppDelegate.h */,
 				568FCEA518F780C7002D65F3 /* InfoGrabrAppDelegate.m */,
+				11801BB71902E6D300223E27 /* checkbox-checked.png */,
+				11801BB41902E6CC00223E27 /* checkbox.png */,
 				568FCEB018F780C7002D65F3 /* first.png */,
 				568FCEB218F780C7002D65F3 /* first@2x.png */,
 				568FCEB718F780C7002D65F3 /* second.png */,
@@ -213,6 +227,8 @@
 			children = (
 				568FCEB418F780C7002D65F3 /* InfoGrabrSecondViewController.h */,
 				568FCEB518F780C7002D65F3 /* InfoGrabrSecondViewController.m */,
+				11801BBB1902E71300223E27 /* QuestionnaireViewController.m */,
+				11801BBD1902E72500223E27 /* QuestionnaireViewController.h */,
 				5694FDD718F8188B0061A991 /* ScanViewController.h */,
 				5694FDD818F8188B0061A991 /* ScanViewController.mm */,
 			);
@@ -224,6 +240,8 @@
 			children = (
 				5694FDFD1901DE660061A991 /* Conference.h */,
 				5694FDFE1901DE660061A991 /* Conference.m */,
+				11801BBE1902E76900223E27 /* QuestionnaireServices.h */,
+				11801BBF1902E76F00223E27 /* QuestionnaireServices.m */,
 				5694FDFA1901DE300061A991 /* Attendee.h */,
 				5694FDFB1901DE300061A991 /* Attendee.m */,
 			);
@@ -235,6 +253,7 @@
 			children = (
 				5694FDD918F8188B0061A991 /* ScanViewController.xib */,
 				568FCEBE18F780C7002D65F3 /* InfoGrabrSecondViewController.xib */,
+				11801BB91902E70800223E27 /* QuestionnaireViewController.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -336,6 +355,9 @@
 				568FCEC018F780C7002D65F3 /* InfoGrabrSecondViewController.xib in Resources */,
 				5694FDDB18F8188B0061A991 /* ScanViewController.xib in Resources */,
 				5694FDDD18F823A80061A991 /* beep-beep.aiff in Resources */,
+				11801BB51902E6CC00223E27 /* checkbox.png in Resources */,
+				11801BB81902E6D300223E27 /* checkbox-checked.png in Resources */,
+				11801BBA1902E70800223E27 /* QuestionnaireViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,6 +376,8 @@
 				5694FDF018FAE6C10061A991 /* AttendeeStore.m in Sources */,
 				5694FDFC1901DE310061A991 /* Attendee.m in Sources */,
 				5694FDFF1901DE660061A991 /* Conference.m in Sources */,
+				11801BBC1902E71300223E27 /* QuestionnaireViewController.m in Sources */,
+				11801BC01902E76F00223E27 /* QuestionnaireServices.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -458,6 +482,7 @@
 					"lib/iphone/ZXingWidget/Classes/**",
 				);
 				INFOPLIST_FILE = "InfoGrabr/InfoGrabr-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
@@ -477,6 +502,7 @@
 					"lib/iphone/ZXingWidget/Classes/**",
 				);
 				INFOPLIST_FILE = "InfoGrabr/InfoGrabr-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;

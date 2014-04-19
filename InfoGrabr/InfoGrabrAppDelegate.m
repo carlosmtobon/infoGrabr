@@ -4,7 +4,7 @@
 
 #import "ScanViewController.h"
 
-#import "InfoGrabrSecondViewController.h"
+#import "QuestionnaireViewController.h"
 
 @implementation InfoGrabrAppDelegate
 
@@ -13,7 +13,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     UIViewController *viewController1 = [[ScanViewController alloc] initWithNibName:@"ScanViewController" bundle:nil];
-    UIViewController *viewController2 = [[InfoGrabrSecondViewController alloc] initWithNibName:@"InfoGrabrSecondViewController" bundle:nil];
+    UIViewController *viewController2 = [[QuestionnaireViewController alloc] initWithNibName:@"QuestionnaireViewController" bundle:nil];
     self.tabBarController = [[UITabBarController alloc] init];
     self.tabBarController.viewControllers = @[viewController1, viewController2];
     self.window.rootViewController = self.tabBarController;
