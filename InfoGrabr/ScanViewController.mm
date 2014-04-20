@@ -59,6 +59,7 @@
     QuestionnaireViewController* qvc = [self.tabBarController.viewControllers objectAtIndex:1];
     
     // TODO set qvc attendee to attendee
+    qvc.clientLead = attendee;
     self.tabBarController.selectedViewController = qvc;
 }
 
