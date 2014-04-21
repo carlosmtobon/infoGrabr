@@ -11,7 +11,6 @@
 		11801BB81902E6D300223E27 /* checkbox-checked.png in Resources */ = {isa = PBXBuildFile; fileRef = 11801BB71902E6D300223E27 /* checkbox-checked.png */; };
 		11801BBA1902E70800223E27 /* QuestionnaireViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11801BB91902E70800223E27 /* QuestionnaireViewController.xib */; };
 		11801BBC1902E71300223E27 /* QuestionnaireViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11801BBB1902E71300223E27 /* QuestionnaireViewController.m */; };
-		11801BC01902E76F00223E27 /* QuestionnaireServices.m in Sources */ = {isa = PBXBuildFile; fileRef = 11801BBF1902E76F00223E27 /* QuestionnaireServices.m */; };
 		567AED6919033EB2002D0EA9 /* Attendee.m in Sources */ = {isa = PBXBuildFile; fileRef = 567AED6819033EB2002D0EA9 /* Attendee.m */; };
 		568FCE9618F780C6002D65F3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 568FCE9518F780C6002D65F3 /* UIKit.framework */; };
 		568FCE9818F780C6002D65F3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 568FCE9718F780C6002D65F3 /* Foundation.framework */; };
@@ -43,6 +42,7 @@
 		569CA76F190319CF009CB655 /* RecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 569CA76D190319CD009CB655 /* RecordViewController.m */; };
 		569CA770190319CF009CB655 /* RecordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 569CA76E190319CE009CB655 /* RecordViewController.xib */; };
 		569CA77419031ED6009CB655 /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 569CA77319031ED6009CB655 /* camera.png */; };
+		901D2C6819058DC300161DEB /* InfoGrabrJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 901D2C6719058DC300161DEB /* InfoGrabrJSON.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,8 +75,6 @@
 		11801BB91902E70800223E27 /* QuestionnaireViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuestionnaireViewController.xib; sourceTree = "<group>"; };
 		11801BBB1902E71300223E27 /* QuestionnaireViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionnaireViewController.m; sourceTree = "<group>"; };
 		11801BBD1902E72500223E27 /* QuestionnaireViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuestionnaireViewController.h; sourceTree = "<group>"; };
-		11801BBE1902E76900223E27 /* QuestionnaireServices.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuestionnaireServices.h; sourceTree = "<group>"; };
-		11801BBF1902E76F00223E27 /* QuestionnaireServices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionnaireServices.m; sourceTree = "<group>"; };
 		567AED6719033EB2002D0EA9 /* Attendee.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Attendee.h; sourceTree = "<group>"; };
 		567AED6819033EB2002D0EA9 /* Attendee.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Attendee.m; sourceTree = "<group>"; };
 		568FCE9218F780C6002D65F3 /* InfoGrabr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InfoGrabr.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -116,6 +114,8 @@
 		569CA76D190319CD009CB655 /* RecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordViewController.m; sourceTree = "<group>"; };
 		569CA76E190319CE009CB655 /* RecordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecordViewController.xib; sourceTree = "<group>"; };
 		569CA77319031ED6009CB655 /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
+		901D2C6619058DC300161DEB /* InfoGrabrJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoGrabrJSON.h; sourceTree = "<group>"; };
+		901D2C6719058DC300161DEB /* InfoGrabrJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoGrabrJSON.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +180,7 @@
 		568FCE9B18F780C6002D65F3 /* InfoGrabr */ = {
 			isa = PBXGroup;
 			children = (
+				901D2C6419058D9500161DEB /* API */,
 				5694FDED18FAE5AF0061A991 /* CoreData */,
 				5694FDE818FADF8D0061A991 /* Models */,
 				5694FDE918FADF940061A991 /* Views */,
@@ -240,8 +241,6 @@
 			children = (
 				567AED6719033EB2002D0EA9 /* Attendee.h */,
 				567AED6819033EB2002D0EA9 /* Attendee.m */,
-				11801BBE1902E76900223E27 /* QuestionnaireServices.h */,
-				11801BBF1902E76F00223E27 /* QuestionnaireServices.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -264,6 +263,15 @@
 				5694FDEF18FAE6C10061A991 /* AttendeeStore.m */,
 			);
 			name = CoreData;
+			sourceTree = "<group>";
+		};
+		901D2C6419058D9500161DEB /* API */ = {
+			isa = PBXGroup;
+			children = (
+				901D2C6619058DC300161DEB /* InfoGrabrJSON.h */,
+				901D2C6719058DC300161DEB /* InfoGrabrJSON.m */,
+			);
+			name = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -373,9 +381,9 @@
 				5694FDE218F9B14E0061A991 /* InfoGrabr.xcdatamodeld in Sources */,
 				5694FDF018FAE6C10061A991 /* AttendeeStore.m in Sources */,
 				11801BBC1902E71300223E27 /* QuestionnaireViewController.m in Sources */,
-				11801BC01902E76F00223E27 /* QuestionnaireServices.m in Sources */,
 				569CA76F190319CF009CB655 /* RecordViewController.m in Sources */,
 				567AED6919033EB2002D0EA9 /* Attendee.m in Sources */,
+				901D2C6819058DC300161DEB /* InfoGrabrJSON.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

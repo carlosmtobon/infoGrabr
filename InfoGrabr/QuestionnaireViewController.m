@@ -7,8 +7,8 @@
 //
 
 #import "QuestionnaireViewController.h"
-#import "QuestionnaireServices.h"
 #import "Attendee.h"
+#import "InfoGrabrJSON.h"
 
 @implementation QuestionnaireViewController
 
@@ -30,11 +30,10 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    sharedServices = [[QuestionnaireServices alloc] init];
     
-    services = [sharedServices services];
+    // create default services list
+    services = services = [[NSMutableArray alloc] initWithObjects:@"Analysis Consult", @"Biorepository", @"Gene Expression", @"Genotyping", @"Sequencing", nil];
     
-    originalCount = services.count;
     
     timeframes = [NSArray arrayWithObjects:@"0-3 Months", @"6 Months", @"1 Year", @"Greater than 1 Year", nil];
     
@@ -88,6 +87,35 @@
     }
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    // update services from the web 
+    // update services with data from the web
+    [InfoGrabrJSON fetchServices:^(NSURLResponse *response, NSData *data, NSError *error)
+     {
+         if (error)
+         {
+             NSLog(@"Error fetching services list!");
+         }
+         else
+         {
+             // build array of service names from requested data
+             NSDictionary* json = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
+             
+             [services removeAllObjects];
+             for (NSDictionary* dic in json)
+             {
+                 [services addObject:[dic valueForKey:@"name"]];
+             }
+             
+             [servicesPicker reloadAllComponents];
+             [servicesPicker reloadInputViews];
+             NSLog(@"services: %@", services);
+         }
+         
+     }];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -108,7 +136,7 @@
 
 -(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
     if ([pickerView isEqual:servicesPicker])
-        return originalCount;
+        return [services count];
     else
         return [timeframes count];
 }
@@ -183,8 +211,8 @@
 }
 
 - (IBAction)saveButton:(id)sender {
-    //                                                                                                                                                                                                         
     
+
 }
 
 - (IBAction)timeFrameDropDown:(id)sender {

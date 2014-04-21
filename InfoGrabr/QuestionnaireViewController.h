@@ -13,7 +13,6 @@
 
 @interface QuestionnaireViewController : UIViewController <UIPickerViewDataSource,UIPickerViewDelegate, UITextFieldDelegate, UITextViewDelegate>
 {
-    NSInteger originalCount;
     QuestionnaireServices *sharedServices;
     Attendee *clientLead;
 }
