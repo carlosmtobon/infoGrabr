@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		11801BB51902E6CC00223E27 /* checkbox.png in Resources */ = {isa = PBXBuildFile; fileRef = 11801BB41902E6CC00223E27 /* checkbox.png */; };
 		11801BB81902E6D300223E27 /* checkbox-checked.png in Resources */ = {isa = PBXBuildFile; fileRef = 11801BB71902E6D300223E27 /* checkbox-checked.png */; };
 		11801BBA1902E70800223E27 /* QuestionnaireViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11801BB91902E70800223E27 /* QuestionnaireViewController.xib */; };
 		11801BBC1902E71300223E27 /* QuestionnaireViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11801BBB1902E71300223E27 /* QuestionnaireViewController.m */; };
 		118CDBEE1906007B008FD4B1 /* MIRadioButtonGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 118CDBED1906007B008FD4B1 /* MIRadioButtonGroup.m */; };
+		11A331EC19072CB800AD8349 /* radiobutton-checked.png in Resources */ = {isa = PBXBuildFile; fileRef = 11A331EA19072CB800AD8349 /* radiobutton-checked.png */; };
+		11A331ED19072CB800AD8349 /* radiobutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 11A331EB19072CB800AD8349 /* radiobutton.png */; };
+		11A331EF19072CD200AD8349 /* checkbox.png in Resources */ = {isa = PBXBuildFile; fileRef = 11A331EE19072CD200AD8349 /* checkbox.png */; };
 		567AED6919033EB2002D0EA9 /* Attendee.m in Sources */ = {isa = PBXBuildFile; fileRef = 567AED6819033EB2002D0EA9 /* Attendee.m */; };
 		567AED6E1906D196002D0EA9 /* um-logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 567AED6D1906D196002D0EA9 /* um-logo.jpg */; };
 		567AED731906E52E002D0EA9 /* coollogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 567AED721906E52E002D0EA9 /* coollogo.png */; };
@@ -74,13 +76,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		11801BB41902E6CC00223E27 /* checkbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkbox.png; sourceTree = "<group>"; };
 		11801BB71902E6D300223E27 /* checkbox-checked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkbox-checked.png"; sourceTree = "<group>"; };
 		11801BB91902E70800223E27 /* QuestionnaireViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuestionnaireViewController.xib; sourceTree = "<group>"; };
 		11801BBB1902E71300223E27 /* QuestionnaireViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionnaireViewController.m; sourceTree = "<group>"; };
 		11801BBD1902E72500223E27 /* QuestionnaireViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuestionnaireViewController.h; sourceTree = "<group>"; };
 		118CDBEC1906007B008FD4B1 /* MIRadioButtonGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIRadioButtonGroup.h; sourceTree = "<group>"; };
 		118CDBED1906007B008FD4B1 /* MIRadioButtonGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIRadioButtonGroup.m; sourceTree = "<group>"; };
+		11A331EA19072CB800AD8349 /* radiobutton-checked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "radiobutton-checked.png"; sourceTree = "<group>"; };
+		11A331EB19072CB800AD8349 /* radiobutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = radiobutton.png; sourceTree = "<group>"; };
+		11A331EE19072CD200AD8349 /* checkbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkbox.png; sourceTree = "<group>"; };
 		567AED6719033EB2002D0EA9 /* Attendee.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Attendee.h; sourceTree = "<group>"; };
 		567AED6819033EB2002D0EA9 /* Attendee.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Attendee.m; sourceTree = "<group>"; };
 		567AED6D1906D196002D0EA9 /* um-logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "um-logo.jpg"; sourceTree = "<group>"; };
@@ -202,7 +206,9 @@
 				569CA77319031ED6009CB655 /* camera.png */,
 				567AED721906E52E002D0EA9 /* coollogo.png */,
 				11801BB71902E6D300223E27 /* checkbox-checked.png */,
-				11801BB41902E6CC00223E27 /* checkbox.png */,
+				11A331EE19072CD200AD8349 /* checkbox.png */,
+				11A331EB19072CB800AD8349 /* radiobutton.png */,
+				11A331EA19072CB800AD8349 /* radiobutton-checked.png */,
 				568FCEB018F780C7002D65F3 /* first.png */,
 				568FCEB218F780C7002D65F3 /* first@2x.png */,
 				568FCEB718F780C7002D65F3 /* second.png */,
@@ -376,13 +382,15 @@
 				568FCEBA18F780C7002D65F3 /* second@2x.png in Resources */,
 				5694FDDB18F8188B0061A991 /* ScanViewController.xib in Resources */,
 				5694FDDD18F823A80061A991 /* beep-beep.aiff in Resources */,
-				11801BB51902E6CC00223E27 /* checkbox.png in Resources */,
 				11801BB81902E6D300223E27 /* checkbox-checked.png in Resources */,
 				11801BBA1902E70800223E27 /* QuestionnaireViewController.xib in Resources */,
 				569CA77419031ED6009CB655 /* camera.png in Resources */,
 				90FD8407190617A200A1E362 /* RecordDetailedViewController.xib in Resources */,
 				567AED6E1906D196002D0EA9 /* um-logo.jpg in Resources */,
 				567AED731906E52E002D0EA9 /* coollogo.png in Resources */,
+				11A331EC19072CB800AD8349 /* radiobutton-checked.png in Resources */,
+				11A331ED19072CB800AD8349 /* radiobutton.png in Resources */,
+				11A331EF19072CD200AD8349 /* checkbox.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

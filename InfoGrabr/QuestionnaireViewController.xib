@@ -952,9 +952,9 @@
 											<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
 										</object>
 										<reference key="IBUINormalTitleShadowColor" ref="380893058"/>
-										<object class="NSCustomResource" key="IBUINormalImage" id="306090726">
+										<object class="NSCustomResource" key="IBUINormalImage" id="44523225">
 											<string key="NSClassName">NSImage</string>
-											<string key="NSResourceName">radionbutton.png</string>
+											<string key="NSResourceName">radiobutton.png</string>
 										</object>
 										<reference key="IBUIFontDescription" ref="529375489"/>
 										<reference key="IBUIFont" ref="699012146"/>
@@ -978,7 +978,7 @@
 											<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
 										</object>
 										<reference key="IBUINormalTitleShadowColor" ref="380893058"/>
-										<reference key="IBUINormalImage" ref="306090726"/>
+										<reference key="IBUINormalImage" ref="44523225"/>
 										<reference key="IBUIFontDescription" ref="529375489"/>
 										<reference key="IBUIFont" ref="699012146"/>
 									</object>
@@ -1003,7 +1003,7 @@
 										<reference key="IBUINormalTitleShadowColor" ref="380893058"/>
 										<object class="NSCustomResource" key="IBUINormalImage">
 											<string key="NSClassName">NSImage</string>
-											<string key="NSResourceName">radionbutton-pressed.png</string>
+											<string key="NSResourceName">radiobutton-checked.png</string>
 										</object>
 										<reference key="IBUIFontDescription" ref="529375489"/>
 										<reference key="IBUIFont" ref="699012146"/>
@@ -1027,7 +1027,7 @@
 											<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
 										</object>
 										<reference key="IBUINormalTitleShadowColor" ref="380893058"/>
-										<reference key="IBUINormalImage" ref="306090726"/>
+										<reference key="IBUINormalImage" ref="44523225"/>
 										<reference key="IBUIFontDescription" ref="529375489"/>
 										<reference key="IBUIFont" ref="699012146"/>
 									</object>
@@ -1050,7 +1050,7 @@
 											<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
 										</object>
 										<reference key="IBUINormalTitleShadowColor" ref="380893058"/>
-										<reference key="IBUINormalImage" ref="306090726"/>
+										<reference key="IBUINormalImage" ref="44523225"/>
 										<reference key="IBUIFontDescription" ref="529375489"/>
 										<reference key="IBUIFont" ref="699012146"/>
 									</object>
@@ -2048,8 +2048,8 @@
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="radionbutton-pressed.png">{40, 40}</string>
-			<string key="radionbutton.png">{40, 40}</string>
+			<string key="radiobutton-checked.png">{25, 25}</string>
+			<string key="radiobutton.png">{25, 25}</string>
 		</dictionary>
 		<string key="IBCocoaTouchPluginVersion">2083</string>
 	</data>

@@ -113,6 +113,11 @@
     self.phoneOne.delegate = self;
     self.phoneTwo.delegate = self;
     self.email.delegate = self;
+    
+    // set lykerscale default
+    selectedLyker = @"neutral";
+    
+    [selectedServices appendString:@""];
 
 }
 
@@ -137,9 +142,7 @@
         self.lastName.text = clientLead.lastName;
         self.organization.text = clientLead.organization;
     }
-    
-    // set lykerscale default
-    selectedLyker = @"neutral";
+
 }
 
 -(void)textFieldDidEndEditing:(UITextField *)textField
@@ -258,7 +261,7 @@
     clientLead.phone1 = self.phoneOne.text;
     clientLead.phone2 = self.phoneTwo.text;
     clientLead.email = self.email.text;
-    
+
     if (originalCount < [services count])
     {
         for(int i = [services count]; i > originalCount; i--)
@@ -289,6 +292,8 @@
         // check if data exists
         if (data)
         {
+            NSLog(@"%@",data);
+            
             alert = [[UIAlertView alloc] initWithTitle:@"Information Saved" message:@"Information was saved successfully to database." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
             
             [alert show];
@@ -361,39 +366,44 @@
 - (IBAction)radioButtonPressed:(id)sender {
 
     
-    [radioButton1 setImage:[UIImage imageNamed:@"radionbutton.png"] forState:UIControlStateNormal];
+    [radioButton1 setImage:[UIImage imageNamed:@"radiobutton.png"] forState:UIControlStateNormal];
 
-    [radioButton2 setImage:[UIImage imageNamed:@"radionbutton.png"] forState:UIControlStateNormal];
+    [radioButton2 setImage:[UIImage imageNamed:@"radiobutton.png"] forState:UIControlStateNormal];
 
-    [radioButton3 setImage:[UIImage imageNamed:@"radionbutton.png"] forState:UIControlStateNormal];
+    [radioButton3 setImage:[UIImage imageNamed:@"radiobutton.png"] forState:UIControlStateNormal];
 
-    [radioButton4 setImage:[UIImage imageNamed:@"radionbutton.png"] forState:UIControlStateNormal];
+    [radioButton4 setImage:[UIImage imageNamed:@"radiobutton.png"] forState:UIControlStateNormal];
 
-    [radioButton5 setImage:[UIImage imageNamed:@"radionbutton.png"] forState:UIControlStateNormal];
+    [radioButton5 setImage:[UIImage imageNamed:@"radiobutton.png"] forState:UIControlStateNormal];
     
     
     switch ([sender tag]) {
         case 1:
-            [radioButton1 setImage:[UIImage imageNamed:@"radionbutton-pressed.png"] forState:UIControlStateNormal];
+            [radioButton1 setImage:[UIImage imageNamed:@"radiobutton-checked.png"] forState:UIControlStateNormal];
             selectedLyker = @"strongly agree";
             break;
         case 2:
-            [radioButton2 setImage:[UIImage imageNamed:@"radionbutton-pressed.png"] forState:UIControlStateNormal];
+            [radioButton2 setImage:[UIImage imageNamed:@"radiobutton-checked.png"] forState:UIControlStateNormal];
             selectedLyker = @"agree";
             break;
         case 3:
-            [radioButton3 setImage:[UIImage imageNamed:@"radionbutton-pressed.png"] forState:UIControlStateNormal];
+            [radioButton3 setImage:[UIImage imageNamed:@"radiobutton-checked.png"] forState:UIControlStateNormal];
             selectedLyker = @"neutral";
             break;
         case 4:
-            [radioButton4 setImage:[UIImage imageNamed:@"radionbutton-pressed.png"] forState:UIControlStateNormal];
+            [radioButton4 setImage:[UIImage imageNamed:@"radiobutton-checked.png"] forState:UIControlStateNormal];
             selectedLyker = @"disagree";
             break;
         case 5:
-            [radioButton5 setImage:[UIImage imageNamed:@"radionbutton-pressed.png"] forState:UIControlStateNormal];
+            [radioButton5 setImage:[UIImage imageNamed:@"radiobutton-checked.png"] forState:UIControlStateNormal];
             selectedLyker = @"strongly disagree";
             break;
     }
+}
+
+-(void)clearForm
+{
+    
 }
 
 @end
