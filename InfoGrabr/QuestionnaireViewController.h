@@ -14,6 +14,7 @@
 @interface QuestionnaireViewController : UIViewController <UIPickerViewDataSource,UIPickerViewDelegate, UITextFieldDelegate, UITextViewDelegate>
 {
     NSInteger originalCount;
+    NSInteger selectTimeRow;
     QuestionnaireServices *sharedServices;
     Attendee *clientLead;
 }
@@ -28,7 +29,11 @@
 
 @property (strong, nonatomic) NSMutableArray *timeframes;
 
+@property (strong, nonatomic) NSMutableString *selectedServices;
+
 @property (strong, nonatomic) UITextField *timeFramePickerView;
+
+@property (strong, nonatomic) NSString *selectedTime;
 
 @property (strong, nonatomic) Attendee *clientLead;
 

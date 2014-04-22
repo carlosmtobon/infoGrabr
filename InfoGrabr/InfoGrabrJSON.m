@@ -50,5 +50,10 @@
     [InfoGrabrJSON fetchURL:CONFERENCES_URL handler:handler];
 }
 
++ (NSData *)fetchConferencesSync//: (void (^)(NSURLResponse *resp, NSData *data, NSError *error)) handler
+{
+    return [InfoGrabrJSON fetchURLSync:CONFERENCES_URL];//] handler:handler];
+}
+
 
 @end

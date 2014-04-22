@@ -11,6 +11,7 @@
 		11801BB81902E6D300223E27 /* checkbox-checked.png in Resources */ = {isa = PBXBuildFile; fileRef = 11801BB71902E6D300223E27 /* checkbox-checked.png */; };
 		11801BBA1902E70800223E27 /* QuestionnaireViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11801BB91902E70800223E27 /* QuestionnaireViewController.xib */; };
 		11801BBC1902E71300223E27 /* QuestionnaireViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11801BBB1902E71300223E27 /* QuestionnaireViewController.m */; };
+		118CDBEE1906007B008FD4B1 /* MIRadioButtonGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 118CDBED1906007B008FD4B1 /* MIRadioButtonGroup.m */; };
 		567AED6919033EB2002D0EA9 /* Attendee.m in Sources */ = {isa = PBXBuildFile; fileRef = 567AED6819033EB2002D0EA9 /* Attendee.m */; };
 		568FCE9618F780C6002D65F3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 568FCE9518F780C6002D65F3 /* UIKit.framework */; };
 		568FCE9818F780C6002D65F3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 568FCE9718F780C6002D65F3 /* Foundation.framework */; };
@@ -75,6 +76,8 @@
 		11801BB91902E70800223E27 /* QuestionnaireViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuestionnaireViewController.xib; sourceTree = "<group>"; };
 		11801BBB1902E71300223E27 /* QuestionnaireViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionnaireViewController.m; sourceTree = "<group>"; };
 		11801BBD1902E72500223E27 /* QuestionnaireViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuestionnaireViewController.h; sourceTree = "<group>"; };
+		118CDBEC1906007B008FD4B1 /* MIRadioButtonGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIRadioButtonGroup.h; sourceTree = "<group>"; };
+		118CDBED1906007B008FD4B1 /* MIRadioButtonGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIRadioButtonGroup.m; sourceTree = "<group>"; };
 		567AED6719033EB2002D0EA9 /* Attendee.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Attendee.h; sourceTree = "<group>"; };
 		567AED6819033EB2002D0EA9 /* Attendee.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Attendee.m; sourceTree = "<group>"; };
 		568FCE9218F780C6002D65F3 /* InfoGrabr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InfoGrabr.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -241,6 +244,8 @@
 			children = (
 				567AED6719033EB2002D0EA9 /* Attendee.h */,
 				567AED6819033EB2002D0EA9 /* Attendee.m */,
+				118CDBEC1906007B008FD4B1 /* MIRadioButtonGroup.h */,
+				118CDBED1906007B008FD4B1 /* MIRadioButtonGroup.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -384,6 +389,7 @@
 				569CA76F190319CF009CB655 /* RecordViewController.m in Sources */,
 				567AED6919033EB2002D0EA9 /* Attendee.m in Sources */,
 				901D2C6819058DC300161DEB /* InfoGrabrJSON.m in Sources */,
+				118CDBEE1906007B008FD4B1 /* MIRadioButtonGroup.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

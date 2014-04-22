@@ -13,7 +13,7 @@
 @implementation QuestionnaireViewController
 
 @synthesize servicesPicker, timeFramePickerView;
-@synthesize services, timeframes;
+@synthesize services, timeframes,selectedTime, selectedServices;
 @synthesize clientLead;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -212,12 +212,54 @@
 }
 
 - (IBAction)saveButton:(id)sender {
+    clientLead.projectTimeframe = selectedTime;
+    clientLead.extraInfo = self.notes.text;
+    clientLead.company = self.company.text;
+    clientLead.office = self.office.text;
+    clientLead.address = self.address.text;
+    clientLead.city = self.city.text;
+    clientLead.state = self.state.text;
+    clientLead.zipcode = self.zipcode.text;
+    clientLead.country = self.country.text;
+    clientLead.membership = self.membership.text;
+    clientLead.phone1 = self.phoneOne.text;
+    clientLead.phone2 = self.phoneTwo.text;
+    clientLead.email = self.email.text;
     
+    if (originalCount < [services count])
+    {
+        for(int i = [services count]; i > originalCount; i--)
+        {
+            NSInteger index = (NSInteger)[services objectAtIndex:1];
+            
+            [selectedServices appendString:[services objectAtIndex:index]];
+            [selectedServices appendString:@", "];
+        }
+    }
+    
+    clientLead.cgtServices = selectedServices;
+    clientLead.confName = @"Patrick's Conference";
+    
+    clientLead.dateCreated = [NSDate date];
+    //NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+    //[dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    //clientLead.dateCreated = [dateFormatter stringFromDate:currDate];
+    
+    //clientLead.lykerNum = 1;
 
 }
 
 - (IBAction)timeFrameDropDown:(id)sender {
     [self.timeFramePickerView becomeFirstResponder];
+}
+
+
+-(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
+{
+    if (!([pickerView isEqual:servicesPicker]))
+    {
+        selectTimeRow = row;
+    }
 }
 
 - (void)cancelTouched:(UIBarButtonItem *)sender
@@ -228,6 +270,8 @@
 - (void)doneTouched:(UIBarButtonItem *)sender
 {
     [self.timeFramePickerView resignFirstResponder];
+    
+    selectedTime = [timeframes objectAtIndex:selectTimeRow];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
