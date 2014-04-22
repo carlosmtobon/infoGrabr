@@ -5,5 +5,6 @@
 + (void)fetchConferences: (void (^)(NSURLResponse *resp, NSData *data, NSError *error)) handler;
 + (NSData *)fetchServicesSync;
 + (NSData *)fetchAttendeesSync;
++ (NSData *)pushAttendeeSync:(NSString *)info;
 
 @end

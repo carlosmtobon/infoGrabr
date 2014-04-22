@@ -5,21 +5,24 @@
 //  Created by patrick ramiro halsall on 4/14/14.
 //  Copyright (c) 2014 Florida International University. All rights reserved.
 //
-
+#import "InfoGrabrAppDelegate.h"
 #import "QuestionnaireViewController.h"
 #import "Attendee.h"
+#import "AttendeeStore.h"
 #import "InfoGrabrJSON.h"
 
 @implementation QuestionnaireViewController
 
 @synthesize servicesPicker, timeFramePickerView;
-@synthesize services, timeframes,selectedTime, selectedServices;
+@synthesize services, timeframes, selectedTime, selectedServices, selectedLyker;
 @synthesize clientLead;
+@synthesize radioButton1, radioButton2, radioButton3, radioButton4, radioButton5;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+        // Add this controller to rootViewController which is a tab bar - prhalsall, jinzo27
         self.title = NSLocalizedString(@"Questionnaire", @"Questionnaire");
         self.tabBarItem.image = [UIImage imageNamed:@"second"];
     }
@@ -32,41 +35,47 @@
     // Do any additional setup after loading the view from its nib.
     
     
-    // create default services list
+    // create default services list - prhalsall, enio
     services = [[NSMutableArray alloc] initWithObjects: @"Analysis Consult", @"Biorepository", @"Gene Expression", @"Genotyping", @"Sequencing", nil];
     
     // update services from the web
-    // update services with data from the web
+    // update services with data from the web - enio
     NSData *data = [InfoGrabrJSON fetchServicesSync];//:^(NSURLResponse *response, NSData *data, NSError *error)
 
+    // catch errors
     NSError *error = nil;
+    // check if data exists
     if (data)
     {
-         // build array of service names from requested data
-         NSDictionary* json = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
-         
-         [services removeAllObjects];
-         for (NSDictionary* dic in json)
-         {
-             [services addObject:[dic valueForKey:@"name"]];
-         }
-         
-         
-         NSLog(@"services: %@", services);
+        // build array of service names from requested data
+        NSDictionary* json = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
+        
+        // remove default objects from array
+        [services removeAllObjects];
+        // loop through dictionary that was retrieved from the web
+        for (NSDictionary* dic in json)
+        {
+         [services addObject:[dic valueForKey:@"name"]];
+        }
+
+        NSLog(@"services: %@", services);
     }
+    
+    // get original array count before number can potentially change by picker - prhalsall
     originalCount = services.count;
-   // [servicesPicker reloadAllComponents];
+    
+    //[servicesPicker reloadAllComponents];
     //[servicesPicker reloadInputViews];
     //[servicesPicker setNeedsDisplay];
     //[self.view setNeedsDisplay];
    
-    
+    // create a UIPickerView that appears as a keyboard - prhalsall
+    // array for UIPickerView
     timeframes = [NSArray arrayWithObjects:@"0-3 Months", @"6 Months", @"1 Year", @"Greater than 1 Year", nil];
     
-    
+    // allocate memory for a pickerView
     self.timeFramePickerView = [[UITextField alloc] initWithFrame:CGRectZero];
     [self.view addSubview:self.timeFramePickerView];
-    
     
     UIPickerView *pickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
     pickerView.showsSelectionIndicator = YES;
@@ -128,6 +137,30 @@
         self.lastName.text = clientLead.lastName;
         self.organization.text = clientLead.organization;
     }
+    
+    // set lykerscale default
+    selectedLyker = @"neutral";
+}
+
+-(void)textFieldDidEndEditing:(UITextField *)textField
+{
+    if (textField == self.email)
+    {
+        if(![self validateEmail:[self.email text]])
+        {
+            // user entered invalid email address
+            alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Email might not a correct email." delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+            [alert show];
+
+        }
+    }
+}
+
+- (BOOL)validateEmail:(NSString *)emailStr
+{
+    NSString *emailRegex = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
+    NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
+    return [emailTest evaluateWithObject:emailStr];
 }
 
 //The number of columns. Both UIPickerViews have only 1 component
@@ -240,13 +273,48 @@
     clientLead.cgtServices = selectedServices;
     clientLead.confName = @"Patrick's Conference";
     
-    clientLead.dateCreated = [NSDate date];
-    //NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
-    //[dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
-    //clientLead.dateCreated = [dateFormatter stringFromDate:currDate];
+    NSDate *currDate = [NSDate date];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    clientLead.dateCreated = [dateFormatter stringFromDate:currDate];
     
-    //clientLead.lykerNum = 1;
+    clientLead.lykerNum = selectedLyker;
+    
+    if (clientLead.confName.length > 0 && clientLead.firstName.length > 0 && clientLead.organization.length > 0)
+    {
+    
+    NSString *tmp = [NSString stringWithFormat:@"%@;%@;%@;%@;%@;%@;%@;%@;%@;%@;%@;%@;%@;%@;%@;%@;%@;%@;%@;%@;%@",clientLead.address,clientLead.cgtServices,clientLead.city,clientLead.company,clientLead.confId,clientLead.country,clientLead.email,clientLead.extraInfo,clientLead.firstName,clientLead.lastName,clientLead.membership,clientLead.office,clientLead.organization,clientLead.phone1,clientLead.phone2,clientLead.projectTimeframe,clientLead.state,clientLead.zipcode,clientLead.confName,clientLead.dateCreated,clientLead.lykerNum];
+    NSData *data = [InfoGrabrJSON pushAttendeeSync:tmp];
+    
+        // check if data exists
+        if (data)
+        {
+            alert = [[UIAlertView alloc] initWithTitle:@"Information Saved" message:@"Information was saved successfully to database." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            
+            [alert show];
+        }
+        else
+        {
+            alert = [[UIAlertView alloc] initWithTitle:@"Could Not Connect" message:@"Unable to connect at this time. Information will be store on your device." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        
+            [alert show];
+            
+            //add to coredata
+            AttendeeStore* store = [(InfoGrabrAppDelegate*)[[UIApplication sharedApplication]delegate] attendeeStore];
+            
+            if ([store save])
+                NSLog(@"Saved to CoreData");
+        }
+    }
+    else
+    {
+        alert = [[UIAlertView alloc] initWithTitle:@"Invalid Input" message:@"Please make sure Conf ID, First Name, Last Name, and Organization fields are filled out." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
 
+        [alert show];
+    }
+    
+    
+    
 }
 
 - (IBAction)timeFrameDropDown:(id)sender {
@@ -278,6 +346,54 @@
 {
     [textField resignFirstResponder];
     return YES;
+}
+
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
+    
+    if([text isEqualToString:@"\n"]) {
+        [textView resignFirstResponder];
+        return NO;
+    }
+    
+    return YES;
+}
+
+- (IBAction)radioButtonPressed:(id)sender {
+
+    
+    [radioButton1 setImage:[UIImage imageNamed:@"radionbutton.png"] forState:UIControlStateNormal];
+
+    [radioButton2 setImage:[UIImage imageNamed:@"radionbutton.png"] forState:UIControlStateNormal];
+
+    [radioButton3 setImage:[UIImage imageNamed:@"radionbutton.png"] forState:UIControlStateNormal];
+
+    [radioButton4 setImage:[UIImage imageNamed:@"radionbutton.png"] forState:UIControlStateNormal];
+
+    [radioButton5 setImage:[UIImage imageNamed:@"radionbutton.png"] forState:UIControlStateNormal];
+    
+    
+    switch ([sender tag]) {
+        case 1:
+            [radioButton1 setImage:[UIImage imageNamed:@"radionbutton-pressed.png"] forState:UIControlStateNormal];
+            selectedLyker = @"strongly agree";
+            break;
+        case 2:
+            [radioButton2 setImage:[UIImage imageNamed:@"radionbutton-pressed.png"] forState:UIControlStateNormal];
+            selectedLyker = @"agree";
+            break;
+        case 3:
+            [radioButton3 setImage:[UIImage imageNamed:@"radionbutton-pressed.png"] forState:UIControlStateNormal];
+            selectedLyker = @"neutral";
+            break;
+        case 4:
+            [radioButton4 setImage:[UIImage imageNamed:@"radionbutton-pressed.png"] forState:UIControlStateNormal];
+            selectedLyker = @"disagree";
+            break;
+        case 5:
+            [radioButton5 setImage:[UIImage imageNamed:@"radionbutton-pressed.png"] forState:UIControlStateNormal];
+            selectedLyker = @"strongly disagree";
+            break;
+    }
 }
 
 @end

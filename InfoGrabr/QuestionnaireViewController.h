@@ -17,6 +17,7 @@
     NSInteger selectTimeRow;
     QuestionnaireServices *sharedServices;
     Attendee *clientLead;
+    UIAlertView *alert;
 }
 
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
@@ -34,6 +35,8 @@
 @property (strong, nonatomic) UITextField *timeFramePickerView;
 
 @property (strong, nonatomic) NSString *selectedTime;
+
+@property (strong, nonatomic) NSString *selectedLyker;
 
 @property (strong, nonatomic) Attendee *clientLead;
 
@@ -57,5 +60,14 @@
 @property (strong, nonatomic) IBOutlet UITextField *phoneOne;
 @property (strong, nonatomic) IBOutlet UITextField *phoneTwo;
 @property (strong, nonatomic) IBOutlet UITextField *email;
+
+@property (strong, nonatomic) IBOutlet UIButton *radioButton1;
+@property (strong, nonatomic) IBOutlet UIButton *radioButton2;
+@property (strong, nonatomic) IBOutlet UIButton *radioButton3;
+@property (strong, nonatomic) IBOutlet UIButton *radioButton4;
+@property (strong, nonatomic) IBOutlet UIButton *radioButton5;
+
+
+- (IBAction)radioButtonPressed:(id)sender;
 
 @end
