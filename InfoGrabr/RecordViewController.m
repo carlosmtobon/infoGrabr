@@ -7,23 +7,45 @@
 @implementation RecordViewController
 @synthesize attendeesList;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+//- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+//{
+//    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+//    if (self) {
+//        // Custom initialization
+//        self.title = NSLocalizedString(@"Records", @"Records");
+//        self.tabBarItem.image = [UIImage imageNamed:@"first"];
+//    }
+//    return self;
+//}
+
+- (id)init
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
+    // Call the superclass's designated initializer
+    self = [super initWithStyle:UITableViewStyleGrouped];
+    if (self)
+    {
         // Custom initialization
         self.title = NSLocalizedString(@"Records", @"Records");
         self.tabBarItem.image = [UIImage imageNamed:@"first"];
+        
+        // itialize data
+        attendeesList = [[NSMutableArray alloc] init];
     }
     return self;
 }
+
+- (id)initWithStyle:(UITableViewStyle)style
+{
+    return [self init];
+}
+
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
     // Do any additional setup after loading the view from its nib.
-    attendeesList = [[NSMutableArray alloc] init];
+    
     
     // fetch from web service (synchronously)
     NSData* data = [InfoGrabrJSON fetchAttendeesSync];
@@ -43,9 +65,11 @@
             add.confId = [dic valueForKey:@"confId"];
             add.cgtServices = [dic valueForKey:@"cgtServices"];
             add.firstName = [dic valueForKey:@"firstName"];
+            add.lastName = [dic valueForKey:@"lastName"];
             add.address = [dic valueForKey:@"address"];
             add.city = [dic valueForKey:@"city"];
             add.country = [dic valueForKey:@"country"];
+            add.company = [dic valueForKey:@"company"];
             add.email = [dic valueForKey:@"email"];
             add.extraInfo = [dic valueForKey:@"extraInfo"];
             add.membership = [dic valueForKey:@"membership"];
@@ -98,7 +122,7 @@
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     RecordDetailedViewController *rdvc = [[RecordDetailedViewController alloc ] init];
     Attendee* selAttendee = [attendeesList objectAtIndex: [indexPath row]];

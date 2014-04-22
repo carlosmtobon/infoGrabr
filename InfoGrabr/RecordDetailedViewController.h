@@ -11,6 +11,9 @@
 
 @interface RecordDetailedViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UIView *contentView;
+
 @property (weak, nonatomic) IBOutlet UILabel * address;
 @property (weak, nonatomic) IBOutlet UILabel * cgtServices;
 @property (weak, nonatomic) IBOutlet UILabel * city;

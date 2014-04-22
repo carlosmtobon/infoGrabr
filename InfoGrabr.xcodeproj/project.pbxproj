@@ -41,7 +41,6 @@
 		5694FDE218F9B14E0061A991 /* InfoGrabr.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5694FDE018F9B14E0061A991 /* InfoGrabr.xcdatamodeld */; };
 		5694FDF018FAE6C10061A991 /* AttendeeStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 5694FDEF18FAE6C10061A991 /* AttendeeStore.m */; };
 		569CA76F190319CF009CB655 /* RecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 569CA76D190319CD009CB655 /* RecordViewController.m */; };
-		569CA770190319CF009CB655 /* RecordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 569CA76E190319CE009CB655 /* RecordViewController.xib */; };
 		569CA77419031ED6009CB655 /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 569CA77319031ED6009CB655 /* camera.png */; };
 		901D2C6819058DC300161DEB /* InfoGrabrJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 901D2C6719058DC300161DEB /* InfoGrabrJSON.m */; };
 		90FD8406190617A200A1E362 /* RecordDetailedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 90FD8404190617A200A1E362 /* RecordDetailedViewController.m */; };
@@ -117,7 +116,6 @@
 		5694FDEF18FAE6C10061A991 /* AttendeeStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttendeeStore.m; sourceTree = "<group>"; };
 		569CA76C190319CD009CB655 /* RecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordViewController.h; sourceTree = "<group>"; };
 		569CA76D190319CD009CB655 /* RecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordViewController.m; sourceTree = "<group>"; };
-		569CA76E190319CE009CB655 /* RecordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecordViewController.xib; sourceTree = "<group>"; };
 		569CA77319031ED6009CB655 /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
 		901D2C6619058DC300161DEB /* InfoGrabrJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoGrabrJSON.h; sourceTree = "<group>"; };
 		901D2C6719058DC300161DEB /* InfoGrabrJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoGrabrJSON.m; sourceTree = "<group>"; };
@@ -261,7 +259,6 @@
 			isa = PBXGroup;
 			children = (
 				90FD8405190617A200A1E362 /* RecordDetailedViewController.xib */,
-				569CA76E190319CE009CB655 /* RecordViewController.xib */,
 				5694FDD918F8188B0061A991 /* ScanViewController.xib */,
 				11801BB91902E70800223E27 /* QuestionnaireViewController.xib */,
 			);
@@ -376,7 +373,6 @@
 				11801BB51902E6CC00223E27 /* checkbox.png in Resources */,
 				11801BB81902E6D300223E27 /* checkbox-checked.png in Resources */,
 				11801BBA1902E70800223E27 /* QuestionnaireViewController.xib in Resources */,
-				569CA770190319CF009CB655 /* RecordViewController.xib in Resources */,
 				569CA77419031ED6009CB655 /* camera.png in Resources */,
 				90FD8407190617A200A1E362 /* RecordDetailedViewController.xib in Resources */,
 			);

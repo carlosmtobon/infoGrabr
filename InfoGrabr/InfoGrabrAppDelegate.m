@@ -18,7 +18,8 @@
     // Override point for customization after application launch.
     UIViewController *viewController1 = [[ScanViewController alloc] initWithNibName:@"ScanViewController" bundle:nil];
     UIViewController *viewController2 = [[QuestionnaireViewController alloc] initWithNibName:@"QuestionnaireViewController" bundle:nil];
-    UIViewController *viewController3 = [[RecordViewController alloc] initWithNibName:@"RecordViewController" bundle:nil];
+    UIViewController *viewController3 = [[RecordViewController alloc] init];
+    
     
     UINavigationController *viewController4 = [[UINavigationController alloc] initWithRootViewController:viewController3];
     
