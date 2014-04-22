@@ -31,15 +31,42 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    // create default services list
-    services = services = [[NSMutableArray alloc] initWithObjects:@"Analysis Consult", @"Biorepository", @"Gene Expression", @"Genotyping", @"Sequencing", nil];
     
+    // create default services list
+    services = [[NSMutableArray alloc] initWithObjects: @"Analysis Consult", @"Biorepository", @"Gene Expression", @"Genotyping", @"Sequencing", nil];
+    
+    // update services from the web
+    // update services with data from the web
+    NSData *data = [InfoGrabrJSON fetchServicesSync];//:^(NSURLResponse *response, NSData *data, NSError *error)
+
+    NSError *error = nil;
+    if (data)
+    {
+         // build array of service names from requested data
+         NSDictionary* json = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
+         
+         [services removeAllObjects];
+         for (NSDictionary* dic in json)
+         {
+             [services addObject:[dic valueForKey:@"name"]];
+         }
+         
+         
+         NSLog(@"services: %@", services);
+    }
+    originalCount = services.count;
+   // [servicesPicker reloadAllComponents];
+    //[servicesPicker reloadInputViews];
+    //[servicesPicker setNeedsDisplay];
+    //[self.view setNeedsDisplay];
+   
     
     timeframes = [NSArray arrayWithObjects:@"0-3 Months", @"6 Months", @"1 Year", @"Greater than 1 Year", nil];
     
     
     self.timeFramePickerView = [[UITextField alloc] initWithFrame:CGRectZero];
     [self.view addSubview:self.timeFramePickerView];
+    
     
     UIPickerView *pickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
     pickerView.showsSelectionIndicator = YES;
@@ -77,43 +104,7 @@
     self.phoneOne.delegate = self;
     self.phoneTwo.delegate = self;
     self.email.delegate = self;
-    
-    if (clientLead != nil)
-    {
-        self.confID.text = clientLead.confId;
-        self.firstName.text = clientLead.firstName;
-        self.lastName.text = clientLead.lastName;
-        self.organization.text = clientLead.organization;
-    }
-}
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    // update services from the web 
-    // update services with data from the web
-    [InfoGrabrJSON fetchServices:^(NSURLResponse *response, NSData *data, NSError *error)
-     {
-         if (error)
-         {
-             NSLog(@"Error fetching services list!");
-         }
-         else
-         {
-             // build array of service names from requested data
-             NSDictionary* json = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
-             
-             [services removeAllObjects];
-             for (NSDictionary* dic in json)
-             {
-                 [services addObject:[dic valueForKey:@"name"]];
-             }
-             
-             [servicesPicker reloadAllComponents];
-             [servicesPicker reloadInputViews];
-             NSLog(@"services: %@", services);
-         }
-         
-     }];
 }
 
 - (void)didReceiveMemoryWarning
@@ -128,6 +119,16 @@
     self.scrollView.contentSize = self.contentView.bounds.size;
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    if (clientLead != nil)
+    {
+        self.confID.text = clientLead.confId;
+        self.firstName.text = clientLead.firstName;
+        self.lastName.text = clientLead.lastName;
+        self.organization.text = clientLead.organization;
+    }
+}
 
 //The number of columns. Both UIPickerViews have only 1 component
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
@@ -136,7 +137,7 @@
 
 -(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
     if ([pickerView isEqual:servicesPicker])
-        return [services count];
+        return originalCount;
     else
         return [timeframes count];
 }
@@ -174,9 +175,9 @@
             [cell setAccessoryView:checkmark];
             //[cell setAccessoryType:UITableViewCellAccessoryNone];
         }
+        
         cell.textLabel.text = [services objectAtIndex:row];
         cell.tag = row;
-    
         return cell;
     }
     else
