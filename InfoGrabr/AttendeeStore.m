@@ -29,9 +29,11 @@
             stringByAppendingPathComponent:@"store.data"];
 }
 
+/*
+ * function that loads all attendees into an NSArray using coredata
+ */
 - (void)loadAllAttendees {
     if (!allAttendees) {
-        // TODO implement JSON parsing
         
         NSFetchRequest* request = [[NSFetchRequest alloc] init];
         NSEntityDescription* e = [[model entitiesByName] objectForKey:@"Attendee"];
@@ -70,6 +72,9 @@
     return self;
 }
 
+/*
+ * Saves all attendees to local storage using coredata
+ */
 -(BOOL) save {
     
     NSError* error = nil;
@@ -81,16 +86,26 @@
     return successful;
 }
 
+/*
+ * Create a Attendee Managed Object
+ */
 -(Attendee*) createAttendee{
     Attendee* attendee = [NSEntityDescription insertNewObjectForEntityForName:@"Attendee" inManagedObjectContext:ctx];;
     return attendee;
 }
 
 
+/*
+ * Deletes an attendee from local Storage
+ */
 - (void)removeAttendee:(Attendee *)attendee {
     [ctx deleteObject:attendee];
 }
 
+
+/*
+ * This wipes the local db by deleting the store file
+ */
 -(void) removeDatabase {
     if([[NSFileManager defaultManager] fileExistsAtPath:self.getStorePath]){
         [[NSFileManager defaultManager] removeItemAtPath:self.getStorePath error:nil];
