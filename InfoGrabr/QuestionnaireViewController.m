@@ -267,7 +267,7 @@
     {
         for(int i = [services count]; i > originalCount; i--)
         {
-            NSInteger index = (NSInteger)[services objectAtIndex:i];
+            NSInteger index = (NSInteger)[services objectAtIndex:i-1];
             
             [selectedServices appendString:[services objectAtIndex:index]];
             [selectedServices appendString:@", "];
