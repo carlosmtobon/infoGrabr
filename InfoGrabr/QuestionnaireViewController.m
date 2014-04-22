@@ -118,6 +118,7 @@
     selectedLyker = @"neutral";
     
     [selectedServices appendString:@""];
+    selectedTime = @"";
 
 }
 
@@ -266,7 +267,7 @@
     {
         for(int i = [services count]; i > originalCount; i--)
         {
-            NSInteger index = (NSInteger)[services objectAtIndex:1];
+            NSInteger index = (NSInteger)[services objectAtIndex:i];
             
             [selectedServices appendString:[services objectAtIndex:index]];
             [selectedServices appendString:@", "];
@@ -403,7 +404,19 @@
 
 -(void)clearForm
 {
-    
+    //clientLead.projectTimeframe selectedTime;
+    clientLead.extraInfo = self.notes.text;
+    clientLead.company = self.company.text;
+    clientLead.office = self.office.text;
+    clientLead.address = self.address.text;
+    clientLead.city = self.city.text;
+    clientLead.state = self.state.text;
+    clientLead.zipcode = self.zipcode.text;
+    clientLead.country = self.country.text;
+    clientLead.membership = self.membership.text;
+    clientLead.phone1 = self.phoneOne.text;
+    clientLead.phone2 = self.phoneTwo.text;
+    clientLead.email = self.email.text;
 }
 
 @end
