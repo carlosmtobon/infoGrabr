@@ -31,7 +31,7 @@
 @property (nonatomic, retain) NSString * state;
 @property (nonatomic, retain) NSString * zipcode;
 @property (nonatomic, retain) NSString * confName;
-@property (nonatomic, retain) NSDate * dateCreated;
-@property (nonatomic, retain) NSNumber * lykerNum;
+@property (nonatomic, retain) NSString * dateCreated;
+@property (nonatomic, retain) NSString * lykerNum;
 
 @end

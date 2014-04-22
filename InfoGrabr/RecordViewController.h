@@ -5,7 +5,6 @@
 #import "AttendeeStore.h"
 
 @interface RecordViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
-
-@property (strong, nonatomic) AttendeeStore* attendeeStore;
+@property (strong, nonatomic) NSMutableArray *attendeesList;
 
 @end

@@ -3,7 +3,8 @@
 
 #define SERVICES_URL @"http://www.eniopn.com/infograbr/index.php?getinfo=services"
 #define CONFERENCES_URL @"http://www.eniopn.com/infograbr/index.php?getinfo=conferences"
-#define UPLOAD_URL @"http://www.eniopn.com/infograbr/index.php?getinfo=services"
+#define ATTENDEES_URL @"http://www.eniopn.com/infograbr/index.php?getinfo=attendees"
+#define PUSH_ATTENDEES_URL @"http://www.eniopn.com/infograbr/index.php?setinfo=attendees"
 
 @implementation InfoGrabrJSON
 
@@ -39,7 +40,7 @@
     [InfoGrabrJSON fetchURL:SERVICES_URL handler:handler];
 }
 
-+ (NSData *)fetchServicesSync//: (void (^)(NSURLResponse *resp, NSData *data, NSError *error)) handler
++ (NSData *)fetchServicesSync
 {
     return [InfoGrabrJSON fetchURLSync:SERVICES_URL];
     
@@ -50,10 +51,15 @@
     [InfoGrabrJSON fetchURL:CONFERENCES_URL handler:handler];
 }
 
-+ (NSData *)fetchConferencesSync//: (void (^)(NSURLResponse *resp, NSData *data, NSError *error)) handler
++ (NSData *)fetchConferencesSync
 {
     return [InfoGrabrJSON fetchURLSync:CONFERENCES_URL];//] handler:handler];
 }
 
+
++ (NSData *)fetchAttendeesSync
+{
+    return [InfoGrabrJSON fetchURLSync:ATTENDEES_URL];
+}
 
 @end

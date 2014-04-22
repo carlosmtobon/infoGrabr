@@ -44,6 +44,8 @@
 		569CA770190319CF009CB655 /* RecordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 569CA76E190319CE009CB655 /* RecordViewController.xib */; };
 		569CA77419031ED6009CB655 /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 569CA77319031ED6009CB655 /* camera.png */; };
 		901D2C6819058DC300161DEB /* InfoGrabrJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 901D2C6719058DC300161DEB /* InfoGrabrJSON.m */; };
+		90FD8406190617A200A1E362 /* RecordDetailedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 90FD8404190617A200A1E362 /* RecordDetailedViewController.m */; };
+		90FD8407190617A200A1E362 /* RecordDetailedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90FD8405190617A200A1E362 /* RecordDetailedViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +121,9 @@
 		569CA77319031ED6009CB655 /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
 		901D2C6619058DC300161DEB /* InfoGrabrJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoGrabrJSON.h; sourceTree = "<group>"; };
 		901D2C6719058DC300161DEB /* InfoGrabrJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoGrabrJSON.m; sourceTree = "<group>"; };
+		90FD8403190617A200A1E362 /* RecordDetailedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordDetailedViewController.h; sourceTree = "<group>"; };
+		90FD8404190617A200A1E362 /* RecordDetailedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordDetailedViewController.m; sourceTree = "<group>"; };
+		90FD8405190617A200A1E362 /* RecordDetailedViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecordDetailedViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -235,6 +240,8 @@
 				5694FDD818F8188B0061A991 /* ScanViewController.mm */,
 				569CA76C190319CD009CB655 /* RecordViewController.h */,
 				569CA76D190319CD009CB655 /* RecordViewController.m */,
+				90FD8403190617A200A1E362 /* RecordDetailedViewController.h */,
+				90FD8404190617A200A1E362 /* RecordDetailedViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -253,6 +260,7 @@
 		5694FDE918FADF940061A991 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				90FD8405190617A200A1E362 /* RecordDetailedViewController.xib */,
 				569CA76E190319CE009CB655 /* RecordViewController.xib */,
 				5694FDD918F8188B0061A991 /* ScanViewController.xib */,
 				11801BB91902E70800223E27 /* QuestionnaireViewController.xib */,
@@ -370,6 +378,7 @@
 				11801BBA1902E70800223E27 /* QuestionnaireViewController.xib in Resources */,
 				569CA770190319CF009CB655 /* RecordViewController.xib in Resources */,
 				569CA77419031ED6009CB655 /* camera.png in Resources */,
+				90FD8407190617A200A1E362 /* RecordDetailedViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,6 +399,7 @@
 				567AED6919033EB2002D0EA9 /* Attendee.m in Sources */,
 				901D2C6819058DC300161DEB /* InfoGrabrJSON.m in Sources */,
 				118CDBEE1906007B008FD4B1 /* MIRadioButtonGroup.m in Sources */,
+				90FD8406190617A200A1E362 /* RecordDetailedViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
