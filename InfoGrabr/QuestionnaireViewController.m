@@ -15,7 +15,7 @@
 
 @synthesize servicesPicker, timeFramePickerView;
 @synthesize services, timeframes, selectedTime, selectedServices, selectedLyker;
-@synthesize clientLead;
+@synthesize clientLead, defaultServices;
 @synthesize radioButton1, radioButton2, radioButton3, radioButton4, radioButton5;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -34,6 +34,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    // backup servicePicker array
+    defaultServices = [[NSMutableArray alloc] initWithObjects: @"", nil];
+    
     // create default services list - p.h, e.p
     services = [[NSMutableArray alloc] initWithObjects: @"Analysis Consult", @"Biorepository", @"Gene Expression", @"Genotyping", @"Sequencing", nil];
     
@@ -42,6 +45,7 @@
     if (tmp)
         services = tmp;
     
+    defaultServices = services;
     // get original array count before number can potentially change by picker - p.h
     originalCount = services.count;
     
@@ -318,6 +322,8 @@
             if ([store save])
                 NSLog(@"Saved to CoreData");
         }
+        
+        [self clearForm];
     }
     else
     {
@@ -335,7 +341,7 @@
 }
 
 - (IBAction)clearButton:(id)sender {
-    
+    [self clearForm];
 }
 
 
@@ -428,15 +434,41 @@
     self.phoneOne.text = @"";
     self.phoneTwo.text = @"";
     self.email.text = @"";
+    self.confID.text = @"";
+    self.firstName.text = @"";
+    self.lastName.text = @"";
+    self.organization.text = @"";
     clientLead.confId = @"";
     clientLead.firstName = @"";
     clientLead.lastName = @"";
     clientLead.organization = @"";
+    clientLead.projectTimeframe = @"";
+    clientLead.extraInfo = @"";
+    clientLead.company = @"";
+    clientLead.office = @"";
+    clientLead.address = @"";
+    clientLead.city = @"";
+    clientLead.state = @"";
+    clientLead.zipcode = @"";
+    clientLead.country = @"";
+    clientLead.membership = @"";
+    clientLead.phone1 = @"";
+    clientLead.phone2 = @"";
+    clientLead.email = @"";
     selectedLyker = @"neutral";
     
     [selectedServices setString:@""];
     
-
+    [radioButton1 setImage:[UIImage imageNamed:@"radiobutton.png"] forState:UIControlStateNormal];
+    
+    [radioButton2 setImage:[UIImage imageNamed:@"radiobutton.png"] forState:UIControlStateNormal];
+    
+    [radioButton3 setImage:[UIImage imageNamed:@"radiobutton-checked.png"] forState:UIControlStateNormal];
+    
+    [radioButton4 setImage:[UIImage imageNamed:@"radiobutton.png"] forState:UIControlStateNormal];
+    
+    [radioButton5 setImage:[UIImage imageNamed:@"radiobutton.png"] forState:UIControlStateNormal];
+    
 }
 
 @end

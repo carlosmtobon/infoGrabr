@@ -28,6 +28,8 @@
 
 @property (strong, nonatomic) NSMutableArray *services;
 
+@property (strong, nonatomic) NSMutableArray *defaultServices;
+
 @property (strong, nonatomic) NSMutableArray *timeframes;
 
 @property (strong, nonatomic) NSMutableString *selectedServices;
