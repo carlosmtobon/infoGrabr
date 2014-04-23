@@ -14,6 +14,7 @@
 		11A331EC19072CB800AD8349 /* radiobutton-checked.png in Resources */ = {isa = PBXBuildFile; fileRef = 11A331EA19072CB800AD8349 /* radiobutton-checked.png */; };
 		11A331ED19072CB800AD8349 /* radiobutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 11A331EB19072CB800AD8349 /* radiobutton.png */; };
 		11A331EF19072CD200AD8349 /* checkbox.png in Resources */ = {isa = PBXBuildFile; fileRef = 11A331EE19072CD200AD8349 /* checkbox.png */; };
+		56034506190869C400E4B883 /* 1398306898_black_2_audio_simple_repeat_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 56034505190869C400E4B883 /* 1398306898_black_2_audio_simple_repeat_2.png */; };
 		567AED6919033EB2002D0EA9 /* Attendee.m in Sources */ = {isa = PBXBuildFile; fileRef = 567AED6819033EB2002D0EA9 /* Attendee.m */; };
 		567AED6E1906D196002D0EA9 /* um-logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 567AED6D1906D196002D0EA9 /* um-logo.jpg */; };
 		567AED731906E52E002D0EA9 /* coollogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 567AED721906E52E002D0EA9 /* coollogo.png */; };
@@ -89,6 +90,7 @@
 		11A331EA19072CB800AD8349 /* radiobutton-checked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "radiobutton-checked.png"; sourceTree = "<group>"; };
 		11A331EB19072CB800AD8349 /* radiobutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = radiobutton.png; sourceTree = "<group>"; };
 		11A331EE19072CD200AD8349 /* checkbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkbox.png; sourceTree = "<group>"; };
+		56034505190869C400E4B883 /* 1398306898_black_2_audio_simple_repeat_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 1398306898_black_2_audio_simple_repeat_2.png; path = ../1398306898_black_2_audio_simple_repeat_2.png; sourceTree = "<group>"; };
 		567AED6719033EB2002D0EA9 /* Attendee.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Attendee.h; sourceTree = "<group>"; };
 		567AED6819033EB2002D0EA9 /* Attendee.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Attendee.m; sourceTree = "<group>"; };
 		567AED6D1906D196002D0EA9 /* um-logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "um-logo.jpg"; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 				567AED6D1906D196002D0EA9 /* um-logo.jpg */,
 				569CA77319031ED6009CB655 /* camera.png */,
 				567AED721906E52E002D0EA9 /* coollogo.png */,
+				56034505190869C400E4B883 /* 1398306898_black_2_audio_simple_repeat_2.png */,
 				11801BB71902E6D300223E27 /* checkbox-checked.png */,
 				11A331EE19072CD200AD8349 /* checkbox.png */,
 				11A331EB19072CB800AD8349 /* radiobutton.png */,
@@ -409,6 +412,7 @@
 				11A331EF19072CD200AD8349 /* checkbox.png in Resources */,
 				9015132019075EDB00094289 /* RecordReportViewController.xib in Resources */,
 				907AAE99190778E000E3988B /* RecordReportViewerViewController.xib in Resources */,
+				56034506190869C400E4B883 /* 1398306898_black_2_audio_simple_repeat_2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
