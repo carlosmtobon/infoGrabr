@@ -7,5 +7,6 @@
 @interface ScanViewController : UIViewController <ZXingDelegate>
 
 - (IBAction)scanPressed:(id)sender;
+- (IBAction)syncDataPressed:(id)sender;
 
 @end

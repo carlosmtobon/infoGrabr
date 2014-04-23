@@ -5,6 +5,7 @@
 #import "AttendeeStore.h"
 #import "ScanViewController.h"
 #import "QuestionnaireViewController.h"
+#import "InfoGrabrJSON.h"
 
 @interface ScanViewController ()
 
@@ -53,6 +54,28 @@
     zxingWidgetController.soundToPlay = [NSURL fileURLWithPath:[mainBundle pathForResource:@"beep-beep" ofType:@"aiff"] isDirectory:NO];
     [self presentViewController:zxingWidgetController animated:YES completion:nil];
    
+}
+
+- (IBAction)syncDataPressed:(id)sender {
+    InfoGrabrAppDelegate* appdelegate = (InfoGrabrAppDelegate*)[[UIApplication sharedApplication] delegate];
+    AttendeeStore* store = appdelegate.attendeeStore;
+    NSArray* allAtt = [store allAttendees];
+    
+    BOOL success = YES;
+    for (Attendee* clientLead in allAtt) {
+        NSString *tmp = [NSString stringWithFormat:@" %@;%@;%@;%@;%@;%@;%@;%@;%@;%@;%@;%@;%@;%@;%@;%@;%@;%@;%@;%@;%@",clientLead.address,clientLead.cgtServices,clientLead.city,clientLead.company,clientLead.confId,clientLead.country,clientLead.email,clientLead.extraInfo,clientLead.firstName,clientLead.lastName,clientLead.membership,clientLead.office,clientLead.organization,clientLead.phone1,clientLead.phone2,clientLead.projectTimeframe,clientLead.state,clientLead.zipcode,clientLead.confName,clientLead.dateCreated,clientLead.lykerNum];
+        
+        // attempt to push data to the server
+        if (![InfoGrabrJSON pushAttendeeInfo:tmp])
+            success = NO;
+    }
+    
+    if (success) {
+        [store removeDatabase];
+        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Information Saved" message:@"Information was saved successfully to database." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        
+        [alert show];
+    }
 }
 
 -(void)zxingController:(ZXingWidgetController *)controller didScanResult:(NSString *)result {

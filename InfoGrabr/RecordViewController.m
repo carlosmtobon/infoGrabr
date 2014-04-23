@@ -21,9 +21,11 @@
         // set navigation bar buttons
         // Create a new bar button item that will send
         UIBarButtonItem *bbi = [[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemCompose target:self action:@selector(viewReports:)];
-        
+         UIBarButtonItem *bbi2 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemRefresh target:self action:@selector(reloadData:)];
         // Set this bar button item as the right item in the navigationItem
         [[self navigationItem] setRightBarButtonItem:bbi];
+        [[self navigationItem] setLeftBarButtonItem:bbi2];
+
         
         // itialize data
         attendeesList = [[NSMutableArray alloc] init];
@@ -152,6 +154,13 @@
 {
     RecordReportViewController *rrvc = [[RecordReportViewController alloc] init];
     [[self navigationController] pushViewController:rrvc animated:YES];
+}
+
+-(IBAction)reloadData:(id)sender
+{
+    // fetch from attendees web service (synchronously)
+    attendeesList = [InfoGrabrJSON fetchAttendees];
+    [self.tableView reloadData];
 }
 
 @end
