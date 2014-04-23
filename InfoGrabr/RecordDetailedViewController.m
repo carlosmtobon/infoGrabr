@@ -18,7 +18,6 @@
     {
         // Custom initialization
         self.title = NSLocalizedString(@"Details", @"Details");
-        self.tabBarItem.image = [UIImage imageNamed:@"first"];
     }
     return self;
 }
@@ -43,6 +42,7 @@
 {
     [super viewWillAppear:animated];
     
+    // update view with information
     self.address.text = attendeeInfo.address;
     self.cgtServices.text = attendeeInfo.cgtServices;
     self.city.text = attendeeInfo.city;
@@ -63,6 +63,7 @@
     self.confName.text = attendeeInfo.confName;
     self.dateCreated.text = attendeeInfo.dateCreated;
     self.lykerNum.text = attendeeInfo.lykerNum;
+    self.confName.text = attendeeInfo.confName;
     self.extraInfo.text = attendeeInfo.extraInfo;
 }
 @end

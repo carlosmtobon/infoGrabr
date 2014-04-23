@@ -280,7 +280,12 @@
     }
     
     clientLead.cgtServices = selectedServices;
-    clientLead.confName = @"Patrick's Conference";
+    
+    // pick first conference as conference name
+    clientLead.confName = @"Patrick's Conference"; // default in case no internet
+    NSMutableArray* tmp = [InfoGrabrJSON fetchConferences];
+    if (tmp && tmp.count > 0) // we got conferences
+        clientLead.confName = [tmp objectAtIndex:0];
     
     NSDate *currDate = [NSDate date];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];

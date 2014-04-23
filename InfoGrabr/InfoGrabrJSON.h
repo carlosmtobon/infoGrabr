@@ -4,6 +4,8 @@
 @interface InfoGrabrJSON : NSObject
 
 + (NSMutableArray*) fetchServices;
++ (NSMutableArray*) fetchConferences;
+
 + (NSMutableArray*) fetchTopLeads;
 + (NSMutableArray*) fetchCityTotal;
 + (NSMutableArray*) fetchStateTotal;
