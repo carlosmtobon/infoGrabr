@@ -7,10 +7,18 @@
 //
 
 #import "RecordReportViewController.h"
+#import "RecordReportViewerViewController.h"
+#import "InfoGrabrJSON.h"
 
-@interface RecordReportViewController ()
-
-@end
+typedef enum {
+    TOP_LEADS,
+    CITY_TOTAL,
+    STATE_TOTAL,
+    COUNTRY_TOTAL,
+    COMPANY_TOTAL,
+    ORG_TOTAL,
+    TIMEFRAME_TOTAL
+} ReportType ;
 
 @implementation RecordReportViewController
 
@@ -18,15 +26,23 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+        
+        // Custom initialization
+        self.title = NSLocalizedString(@"Reports", @"Reports");
+        
         // Custom initialization
         reportTypeList = [[NSArray alloc] initWithObjects:  @"Top Leads (Likert)",
-                                                            @"Totals by City",
-                                                            @"Totals by State",
-                                                            @"Totals by Country",
-                                                            @"Totals by Company",
-                                                            @"Totals by Organization",
-                                                            @"Totals by Time Frame", nil];
+                                                            @"Total by City", nil];
+//                                                            @"Total by State",
+//                                                            @"Total by Country",
+//                                                            @"Total by Company",
+//                                                            @"Total by Organization",
+//                                                            @"Total by Time Frame", nil];
         
+//        UIButton *titleButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+//        [titleButton setTitle:@"Title" forState:UIControlStateNormal];
+//        [titleButton setFrame:CGRectMake(0, 0, 200, 35)];
+//        self.navigationItem.titleView = titleButton;
         
     }
     return self;
@@ -59,11 +75,32 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    RecordDetailedViewController *rdvc = [[RecordDetailedViewController alloc ] init];
-//    Attendee* selAttendee = [attendeesList objectAtIndex: [indexPath row]];
-//    
-//    rdvc.attendeeInfo = selAttendee;
-//    [self.navigationController pushViewController:rdvc animated:YES];
+    RecordReportViewerViewController *rrvvc = [[RecordReportViewerViewController alloc ] init];
+    
+    NSString* selectedReport = [reportTypeList objectAtIndex:[indexPath row]];
+    rrvvc.title = selectedReport;
+    [rrvvc.reportData removeAllObjects];
+    
+    // determine which report type has been selected
+    // and fetch data from web service as needed
+    switch ((ReportType)[indexPath row])
+    {
+        case TOP_LEADS:
+        {
+            rrvvc.reportData = [InfoGrabrJSON fetchTopLeads];
+            break;
+        }
+        case CITY_TOTAL:
+        {
+            rrvvc.reportData = [InfoGrabrJSON fetchCityTotal];
+            break;
+        }
+        default:
+            break;
+    }
+    
+    // fetch report data and populate
+    [self.navigationController pushViewController:rrvvc animated:YES];
 }
 
 @end

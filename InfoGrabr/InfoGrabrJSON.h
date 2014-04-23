@@ -7,5 +7,7 @@
 + (NSData *)fetchServicesSync;
 + (NSData *)fetchAttendeesSync;
 + (BOOL)pushAttendeeSync:(NSString *)info;
++ (NSMutableArray*) fetchTopLeads;
++ (NSMutableArray*) fetchCityTotal;
 
 @end

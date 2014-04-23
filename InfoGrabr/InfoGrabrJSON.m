@@ -5,6 +5,8 @@
 #define SERVICES_URL @"http://www.eniopn.com/infograbr/index.php?getinfo=services"
 #define CONFERENCES_URL @"http://www.eniopn.com/infograbr/index.php?getinfo=conferences"
 #define ATTENDEES_URL @"http://www.eniopn.com/infograbr/index.php?getinfo=attendees"
+#define TOPLEADS_URL @"http://www.eniopn.com/infograbr/index.php?getinfo=topleads"
+#define CITY_TOTAL_URL @"http://www.eniopn.com/infograbr/index.php?getinfo=city"
 #define PUSH_ATTENDEES_URL @"http://www.eniopn.com/infograbr/create.php"
 
 @implementation InfoGrabrJSON
@@ -100,6 +102,63 @@
 + (BOOL)pushAttendeeSync:(NSString *)info
 {
     return [InfoGrabrJSON postDataToUrlSync:PUSH_ATTENDEES_URL :info];
+}
+
++ (NSMutableArray*) fetchTopLeads
+{
+    NSData* webServiceResults = [InfoGrabrJSON fetchURLSync:TOPLEADS_URL];
+    if (webServiceResults)
+    {
+        // get got JSON data from web, parse it into a nice array
+        NSError *error = nil;
+        // build array of service names from requested data
+        NSDictionary* json = [NSJSONSerialization JSONObjectWithData:webServiceResults
+                                                  options:NSJSONReadingMutableContainers
+                                                  error:&error];
+        NSLog(@"%@\n", json);
+        
+        NSMutableArray* arr = [[NSMutableArray alloc] init];
+        
+        // loop through dictionary that was retrieved from the web
+        for (NSDictionary* dic in json)
+        {
+            [arr addObject:[NSString stringWithFormat:@"%@ %@ %@",
+                                                    [dic valueForKey:@"firstName"],
+                                                    [dic valueForKey:@"lastName"],
+                                                    [dic valueForKey:@"phone1"]]];
+        }
+        
+        return arr;
+    }
+    return nil;
+}
+
++ (NSMutableArray*) fetchCityTotal
+{
+    NSData* webServiceResults = [InfoGrabrJSON fetchURLSync:CITY_TOTAL_URL];
+    if (webServiceResults)
+    {
+        // get got JSON data from web, parse it into a nice array
+        NSError *error = nil;
+        // build array of service names from requested data
+        NSDictionary* json = [NSJSONSerialization JSONObjectWithData:webServiceResults
+                                                             options:NSJSONReadingMutableContainers
+                                                               error:&error];
+        NSLog(@"%@\n", json);
+        
+        NSMutableArray* arr = [[NSMutableArray alloc] init];
+        
+        // loop through dictionary that was retrieved from the web
+        for (NSDictionary* dic in json)
+        {
+            [arr addObject:[NSString stringWithFormat:@"%@\t%@",
+                            [dic valueForKey:@"city"],
+                            [dic valueForKey:@"total"]]];
+        }
+        
+        return arr;
+    }
+    return nil;
 }
 
 @end
