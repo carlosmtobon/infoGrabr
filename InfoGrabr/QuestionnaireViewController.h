@@ -44,6 +44,8 @@
 
 - (IBAction)timeFrameDropDown:(id)sender;
 
+- (IBAction)clearButton:(id)sender;
+
 @property (strong, nonatomic) IBOutlet UITextField *confID;
 @property (strong, nonatomic) IBOutlet UITextField *firstName;
 @property (strong, nonatomic) IBOutlet UITextField *lastName;

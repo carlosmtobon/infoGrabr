@@ -22,7 +22,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Add this controller to rootViewController which is a tab bar - prhalsall, jinzo27
+        // Add this controller to rootViewController which is a tab bar - p.h, c.t
         self.title = NSLocalizedString(@"Questionnaire", @"Questionnaire");
         self.tabBarItem.image = [UIImage imageNamed:@"second"];
     }
@@ -34,12 +34,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    
-    // create default services list - prhalsall, enio
+    // create default services list - p.h, e.p
     services = [[NSMutableArray alloc] initWithObjects: @"Analysis Consult", @"Biorepository", @"Gene Expression", @"Genotyping", @"Sequencing", nil];
     
     // update services from the web
-    // update services with data from the web - enio
+    // update services with data from the web - e.p
     NSData *data = [InfoGrabrJSON fetchServicesSync];//:^(NSURLResponse *response, NSData *data, NSError *error)
 
     // catch errors
@@ -61,7 +60,7 @@
         NSLog(@"services: %@", services);
     }
     
-    // get original array count before number can potentially change by picker - prhalsall
+    // get original array count before number can potentially change by picker - p.h
     originalCount = services.count;
     
     //[servicesPicker reloadAllComponents];
@@ -69,11 +68,13 @@
     //[servicesPicker setNeedsDisplay];
     //[self.view setNeedsDisplay];
    
-    // create a UIPickerView that appears as a keyboard - prhalsall
+    // create a UIPickerView that appears as a keyboard
     // array for UIPickerView
     timeframes = [NSArray arrayWithObjects:@"0-3 Months", @"6 Months", @"1 Year", @"Greater than 1 Year", nil];
     
     // allocate memory for a pickerView
+    // this pickerView will be for displaying timeFrame when timeFrameDropDown button is pressed
+    // pickerView will popup like the keyboard
     self.timeFramePickerView = [[UITextField alloc] initWithFrame:CGRectZero];
     [self.view addSubview:self.timeFramePickerView];
     
@@ -89,14 +90,17 @@
     UIToolbar *toolBar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
     toolBar.barStyle = UIBarStyleBlackOpaque;
     
+    // create two buttons on UIToolbar of pickerView
     UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneTouched:)];
     UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelTouched:)];
     
     // the middle button is to make the Done button align to right
     [toolBar setItems:[NSArray arrayWithObjects:cancelButton, [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil], doneButton, nil]];
+    // give pickerView a UIToolBar
     self.timeFramePickerView.inputAccessoryView = toolBar;
     
     
+    // allow users to escape text fields by pressing return key - p.h, c.t
     self.confID.delegate = self;
     self.firstName.delegate = self;
     self.lastName.delegate = self;
@@ -114,9 +118,9 @@
     self.phoneTwo.delegate = self;
     self.email.delegate = self;
     
+    // set defaults and alloc - p.h
     // set lykerscale default
     selectedLyker = @"neutral";
-    
     selectedServices = [[NSMutableString alloc] initWithString:@""];
     selectedTime = @"";
 
@@ -129,6 +133,7 @@
 }
 
 -(void)viewDidLayoutSubviews {
+    // implement code in order for scrollView to work - p.h
     [super viewDidLayoutSubviews];
     [self.scrollView layoutIfNeeded];
     self.scrollView.contentSize = self.contentView.bounds.size;
@@ -136,6 +141,7 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
+    // if scanviewcontroller sends an Attendee object over, pre-populate fields - p.h
     if (clientLead != nil)
     {
         self.confID.text = clientLead.confId;
@@ -146,8 +152,11 @@
 
 }
 
+// validate email syntax - p.h
+// method is called after user exists text fields
 -(void)textFieldDidEndEditing:(UITextField *)textField
 {
+    // chack if the textfield the user exited was the email textfield
     if (textField == self.email)
     {
         if(![self validateEmail:[self.email text]])
@@ -159,7 +168,7 @@
         }
     }
 }
-
+// return fails if string fails regex
 - (BOOL)validateEmail:(NSString *)emailStr
 {
     NSString *emailRegex = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
@@ -173,6 +182,8 @@
 }
 
 -(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+    // check if pickerView is servicePicker
+    // otherwise its the other pickerView
     if ([pickerView isEqual:servicesPicker])
         return originalCount;
     else
@@ -198,6 +209,8 @@
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
             [cell setBackgroundColor:[UIColor clearColor]];
             [cell setBounds: CGRectMake(0, 0, cell.frame.size.width -20 , 44)];
+            
+            // when servicesPicker is tapped once, toggleSelection method is called
             UITapGestureRecognizer *singleTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(toggleSelection:)];
             singleTapGestureRecognizer.numberOfTapsRequired = 1;
             [cell addGestureRecognizer:singleTapGestureRecognizer];
@@ -217,8 +230,9 @@
         cell.tag = row;
         return cell;
     }
-    else
+    else // if it is not servicesPicker pickerView, it's another view
     {
+        // there is only one other pickerView and that's the picker view the has the time frames selection
         UITableViewCell *cell = (UITableViewCell *)view;
         
         if (cell == nil) {
@@ -234,9 +248,13 @@
     }
 }
 
+// when a row of servicesPicker is tapped once, append a new object to the end of the array
+// the new object is a NSNumber that holds the index of selected element of servicesPicker
 - (void)toggleSelection:(UITapGestureRecognizer *)recognizer {
     NSNumber *row = [NSNumber numberWithInt:recognizer.view.tag];
     NSUInteger index = [services indexOfObject:row];
+    
+    // if element of servicesPicker doesn't have an association
     if (index != NSNotFound) {
         [services removeObjectAtIndex:index];
         UIImageView *checkmark = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"checkbox.png"]];
@@ -329,6 +347,10 @@
     [self.timeFramePickerView becomeFirstResponder];
 }
 
+- (IBAction)clearButton:(id)sender {
+    
+}
+
 
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
@@ -419,10 +441,15 @@
     self.phoneOne.text = @"";
     self.phoneTwo.text = @"";
     self.email.text = @"";
-    
+    clientLead.confId = @"";
+    clientLead.firstName = @"";
+    clientLead.lastName = @"";
+    clientLead.organization = @"";
     selectedLyker = @"neutral";
     
-    [selectedServices appendString:@""];
+    [selectedServices setString:@""];
+    
+
 }
 
 @end
