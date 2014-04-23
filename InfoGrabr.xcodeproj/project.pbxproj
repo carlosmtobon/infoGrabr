@@ -46,6 +46,8 @@
 		5694FDF018FAE6C10061A991 /* AttendeeStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 5694FDEF18FAE6C10061A991 /* AttendeeStore.m */; };
 		569CA76F190319CF009CB655 /* RecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 569CA76D190319CD009CB655 /* RecordViewController.m */; };
 		569CA77419031ED6009CB655 /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 569CA77319031ED6009CB655 /* camera.png */; };
+		9015131F19075EDB00094289 /* RecordReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9015131D19075EDB00094289 /* RecordReportViewController.m */; };
+		9015132019075EDB00094289 /* RecordReportViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9015131E19075EDB00094289 /* RecordReportViewController.xib */; };
 		901D2C6819058DC300161DEB /* InfoGrabrJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 901D2C6719058DC300161DEB /* InfoGrabrJSON.m */; };
 		90FD8406190617A200A1E362 /* RecordDetailedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 90FD8404190617A200A1E362 /* RecordDetailedViewController.m */; };
 		90FD8407190617A200A1E362 /* RecordDetailedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90FD8405190617A200A1E362 /* RecordDetailedViewController.xib */; };
@@ -125,6 +127,9 @@
 		569CA76C190319CD009CB655 /* RecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordViewController.h; sourceTree = "<group>"; };
 		569CA76D190319CD009CB655 /* RecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordViewController.m; sourceTree = "<group>"; };
 		569CA77319031ED6009CB655 /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
+		9015131C19075EDB00094289 /* RecordReportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordReportViewController.h; sourceTree = "<group>"; };
+		9015131D19075EDB00094289 /* RecordReportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordReportViewController.m; sourceTree = "<group>"; };
+		9015131E19075EDB00094289 /* RecordReportViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecordReportViewController.xib; sourceTree = "<group>"; };
 		901D2C6619058DC300161DEB /* InfoGrabrJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoGrabrJSON.h; sourceTree = "<group>"; };
 		901D2C6719058DC300161DEB /* InfoGrabrJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoGrabrJSON.m; sourceTree = "<group>"; };
 		90FD8403190617A200A1E362 /* RecordDetailedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordDetailedViewController.h; sourceTree = "<group>"; };
@@ -252,6 +257,8 @@
 				569CA76D190319CD009CB655 /* RecordViewController.m */,
 				90FD8403190617A200A1E362 /* RecordDetailedViewController.h */,
 				90FD8404190617A200A1E362 /* RecordDetailedViewController.m */,
+				9015131C19075EDB00094289 /* RecordReportViewController.h */,
+				9015131D19075EDB00094289 /* RecordReportViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -270,6 +277,7 @@
 		5694FDE918FADF940061A991 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9015131E19075EDB00094289 /* RecordReportViewController.xib */,
 				90FD8405190617A200A1E362 /* RecordDetailedViewController.xib */,
 				5694FDD918F8188B0061A991 /* ScanViewController.xib */,
 				11801BB91902E70800223E27 /* QuestionnaireViewController.xib */,
@@ -391,6 +399,7 @@
 				11A331EC19072CB800AD8349 /* radiobutton-checked.png in Resources */,
 				11A331ED19072CB800AD8349 /* radiobutton.png in Resources */,
 				11A331EF19072CD200AD8349 /* checkbox.png in Resources */,
+				9015132019075EDB00094289 /* RecordReportViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,6 +421,7 @@
 				901D2C6819058DC300161DEB /* InfoGrabrJSON.m in Sources */,
 				118CDBEE1906007B008FD4B1 /* MIRadioButtonGroup.m in Sources */,
 				90FD8406190617A200A1E362 /* RecordDetailedViewController.m in Sources */,
+				9015131F19075EDB00094289 /* RecordReportViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

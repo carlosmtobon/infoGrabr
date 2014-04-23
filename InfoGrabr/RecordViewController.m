@@ -3,20 +3,10 @@
 #import "InfoGrabrAppDelegate.h"
 #import "InfoGrabrJSON.h"
 #import "RecordDetailedViewController.h"
+#import "RecordReportViewController.h"
 
 @implementation RecordViewController
 @synthesize attendeesList;
-
-//- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-//{
-//    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-//    if (self) {
-//        // Custom initialization
-//        self.title = NSLocalizedString(@"Records", @"Records");
-//        self.tabBarItem.image = [UIImage imageNamed:@"first"];
-//    }
-//    return self;
-//}
 
 - (id)init
 {
@@ -27,6 +17,13 @@
         // Custom initialization
         self.title = NSLocalizedString(@"Records", @"Records");
         self.tabBarItem.image = [UIImage imageNamed:@"first"];
+        
+        // set navigation bar buttons
+        // Create a new bar button item that will send
+        UIBarButtonItem *bbi = [[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemCompose target:self action:@selector(viewReports:)];
+        
+        // Set this bar button item as the right item in the navigationItem
+        [[self navigationItem] setRightBarButtonItem:bbi];
         
         // itialize data
         attendeesList = [[NSMutableArray alloc] init];
@@ -91,12 +88,6 @@
     }
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
@@ -130,5 +121,13 @@
     rdvc.attendeeInfo = selAttendee;
     [self.navigationController pushViewController:rdvc animated:YES];
 }
+
+
+- (IBAction)viewReports:(id)sender
+{
+    RecordReportViewController *rrvc = [[RecordReportViewController alloc] init];
+    [[self navigationController] pushViewController:rrvc animated:YES];
+}
+
 @end
 
