@@ -64,7 +64,7 @@
 
 + (NSData *)pushAttendeeSync:(NSString *)info
 {
-    NSString *tmp = [NSString stringWithFormat:@"%@?%@",PUSH_ATTENDEES_URL,info];
+    NSString *tmp = [NSString stringWithFormat:@"%@&data=\"%@\"",PUSH_ATTENDEES_URL,info];
     return [InfoGrabrJSON fetchURLSync:tmp];
 }
 
