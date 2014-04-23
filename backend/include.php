@@ -6,6 +6,11 @@ date_default_timezone_set('America/New_York');
 // api switches
 define("CONFERENCES_API", "conferences");
 define("SERVICES_API", "services");
+define("ATTENDEES_API", "attendees");
+define("TOPLEADS_API", "topleads");
+define("LIKERT_TOTAL_API", "likert");
+define("STATE_TOTAL_API", "state");
+define("CITY_TOTAL_API", "city");
 
 // db configuration
 define("DB_SERVER", "db.eniopn.com");

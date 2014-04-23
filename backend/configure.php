@@ -24,9 +24,9 @@ $conferences_cols = $res->fetch_fields();
 <html>
 <head>
     <title>Configure infoGrabr Server</title>
-    <script src="libs/js/jquery-2.1.0.min.js"></script>
-    <script src="libs/js/jquery-ui-1.10.4.custom.min.js"></script>
-    <link rel="stylesheet" media="screen" type="text/css" href="css/ui-lightness/jquery-ui-1.10.4.custom.min.css" />
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
 </head>
 
 <body>
@@ -34,7 +34,7 @@ $conferences_cols = $res->fetch_fields();
     <p>
         <table>
             <tr>
-                <td align="right">Name:</td>
+                <td align="right"><label>Name: </Label></td>
                 <td><input type='text' id='servicename'></td>
                 <td align="right"><button onclick='addService()'>add</button></td>
             </tr>
@@ -56,10 +56,10 @@ $conferences_cols = $res->fetch_fields();
                     foreach ($services_cols as $col)
                     {
                         $val = $row[$col->name];
-                        echo "<td>$val</td>";
+                        echo "<td><small>$val</small></td>";
                     }
                     $id = $row['id'];
-                    echo "<td><button onclick='deleteRecord(\"service\",$id)' >delete</button> </td></tr>\n";
+                    echo "<td><button  onclick='deleteRecord(\"service\",$id)' type=\"button\">delete</button>\n";
                     echo "</tr>";
                 }
             }
@@ -116,7 +116,7 @@ $conferences_cols = $res->fetch_fields();
                     echo "<td>$val</td>";
                 }
                 $id = $row['id'];
-                echo "<td><button onclick='deleteRecord(\"conference\",$id)' >delete</button> </td></tr>\n";
+                echo "<td><button  onclick='deleteRecord(\"conference\",$id)' type=\"button\">delete</button>\n";
                 echo "</tr>";
             }
         }
