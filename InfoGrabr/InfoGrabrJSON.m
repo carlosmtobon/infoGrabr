@@ -7,9 +7,14 @@
 #define SERVICES_URL @"http://www.eniopn.com/infograbr/index.php?getinfo=services"
 #define CONFERENCES_URL @"http://www.eniopn.com/infograbr/index.php?getinfo=conferences"
 #define ATTENDEES_URL @"http://www.eniopn.com/infograbr/index.php?getinfo=attendees"
+#define PUSH_ATTENDEES_URL @"http://www.eniopn.com/infograbr/create.php"
 #define TOPLEADS_URL @"http://www.eniopn.com/infograbr/index.php?getinfo=topleads"
 #define CITY_TOTAL_URL @"http://www.eniopn.com/infograbr/index.php?getinfo=city"
-#define PUSH_ATTENDEES_URL @"http://www.eniopn.com/infograbr/create.php"
+#define STATE_TOTAL_URL @"http://www.eniopn.com/infograbr/index.php?getinfo=state"
+#define COUNTRY_TOTAL_URL @"http://www.eniopn.com/infograbr/index.php?getinfo=country"
+#define COMPANY_TOTAL_URL @"http://www.eniopn.com/infograbr/index.php?getinfo=company"
+#define ORGANIZATION_TOTAL_URL @"http://www.eniopn.com/infograbr/index.php?getinfo=organization"
+#define TIMEFRAME_TOTAL_URL @"http://www.eniopn.com/infograbr/index.php?getinfo=timeframe"
 
 @implementation InfoGrabrJSON
 
@@ -130,8 +135,108 @@
         // loop through dictionary that was retrieved from the web
         for (NSDictionary* dic in resultsDict)
         {
-            [arr addObject:[NSString stringWithFormat:@"%@\t%@",
+            [arr addObject:[NSString stringWithFormat:@"%@    (%@)",
                             [dic valueForKey:@"city"],
+                            [dic valueForKey:@"total"]]];
+        }
+        
+        return arr;
+    }
+    return nil;
+}
+
++ (NSMutableArray*) fetchStateTotal
+{
+    NSDictionary* resultsDict = [InfoGrabrJSON fetchJSONToDictionary:STATE_TOTAL_URL];
+    if (resultsDict)
+    {
+        NSMutableArray* arr = [[NSMutableArray alloc] init];
+        
+        // loop through dictionary that was retrieved from the web
+        for (NSDictionary* dic in resultsDict)
+        {
+            [arr addObject:[NSString stringWithFormat:@"%@    (%@)",
+                            [dic valueForKey:@"state"],
+                            [dic valueForKey:@"total"]]];
+        }
+        
+        return arr;
+    }
+    return nil;
+}
+
++ (NSMutableArray*) fetchCountryTotal
+{
+    NSDictionary* resultsDict = [InfoGrabrJSON fetchJSONToDictionary:COUNTRY_TOTAL_URL];
+    if (resultsDict)
+    {
+        NSMutableArray* arr = [[NSMutableArray alloc] init];
+        
+        // loop through dictionary that was retrieved from the web
+        for (NSDictionary* dic in resultsDict)
+        {
+            [arr addObject:[NSString stringWithFormat:@"%@    (%@)",
+                            [dic valueForKey:@"country"],
+                            [dic valueForKey:@"total"]]];
+        }
+        
+        return arr;
+    }
+    return nil;
+}
+
++ (NSMutableArray*) fetchCompanyTotal
+{
+    NSDictionary* resultsDict = [InfoGrabrJSON fetchJSONToDictionary:COMPANY_TOTAL_URL];
+    if (resultsDict)
+    {
+        NSMutableArray* arr = [[NSMutableArray alloc] init];
+        
+        // loop through dictionary that was retrieved from the web
+        for (NSDictionary* dic in resultsDict)
+        {
+            [arr addObject:[NSString stringWithFormat:@"%@    (%@)",
+                            [dic valueForKey:@"company"],
+                            [dic valueForKey:@"total"]]];
+        }
+        
+        return arr;
+    }
+    return nil;
+}
+
++ (NSMutableArray*) fetchOrganizationTotal
+{
+    NSDictionary* resultsDict = [InfoGrabrJSON fetchJSONToDictionary:ORGANIZATION_TOTAL_URL];
+    if (resultsDict)
+    {
+        NSMutableArray* arr = [[NSMutableArray alloc] init];
+        
+        // loop through dictionary that was retrieved from the web
+        for (NSDictionary* dic in resultsDict)
+        {
+            [arr addObject:[NSString stringWithFormat:@"%@    (%@)",
+                            [dic valueForKey:@"organization"],
+                            [dic valueForKey:@"total"]]];
+        }
+        
+        return arr;
+    }
+    return nil;
+}
+
++ (NSMutableArray*) fetchTimeFrameTotal
+{
+    NSDictionary* resultsDict = [InfoGrabrJSON fetchJSONToDictionary:TIMEFRAME_TOTAL_URL];
+    if (resultsDict)
+    {
+        NSMutableArray* arr = [[NSMutableArray alloc] init];
+        
+        // loop through dictionary that was retrieved from the web
+        for (NSDictionary* dic in resultsDict)
+        {
+            [arr addObject:[NSString stringWithFormat:@"%@    (%@)",
+                            [dic valueForKey:@"projectTimeframe"],
                             [dic valueForKey:@"total"]]];
         }
         

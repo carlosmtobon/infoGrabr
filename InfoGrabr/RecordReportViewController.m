@@ -32,12 +32,12 @@ typedef enum {
         
         // Custom initialization
         reportTypeList = [[NSArray alloc] initWithObjects:  @"Top Leads (Likert)",
-                                                            @"Total by City", nil];
-//                                                            @"Total by State",
-//                                                            @"Total by Country",
-//                                                            @"Total by Company",
-//                                                            @"Total by Organization",
-//                                                            @"Total by Time Frame", nil];
+                                                            @"Total by City",
+                                                            @"Total by State",
+                                                            @"Total by Country",
+                                                            @"Total by Company",
+                                                            @"Total by Organization",
+                                                            @"Total by Time Frame", nil];
         
 //        UIButton *titleButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
 //        [titleButton setTitle:@"Title" forState:UIControlStateNormal];
@@ -93,6 +93,31 @@ typedef enum {
         case CITY_TOTAL:
         {
             rrvvc.reportData = [InfoGrabrJSON fetchCityTotal];
+            break;
+        }
+        case COUNTRY_TOTAL:
+        {
+            rrvvc.reportData = [InfoGrabrJSON fetchCountryTotal];
+            break;
+        }
+        case STATE_TOTAL:
+        {
+            rrvvc.reportData = [InfoGrabrJSON fetchStateTotal];
+            break;
+        }
+        case COMPANY_TOTAL:
+        {
+            rrvvc.reportData = [InfoGrabrJSON fetchCompanyTotal];
+            break;
+        }
+        case ORG_TOTAL:
+        {
+            rrvvc.reportData = [InfoGrabrJSON fetchOrganizationTotal];
+            break;
+        }
+        case TIMEFRAME_TOTAL:
+        {
+            rrvvc.reportData = [InfoGrabrJSON fetchTimeFrameTotal];
             break;
         }
         default:

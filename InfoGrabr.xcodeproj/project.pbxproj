@@ -133,7 +133,7 @@
 		9015131D19075EDB00094289 /* RecordReportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordReportViewController.m; sourceTree = "<group>"; };
 		9015131E19075EDB00094289 /* RecordReportViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecordReportViewController.xib; sourceTree = "<group>"; };
 		901D2C6619058DC300161DEB /* InfoGrabrJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoGrabrJSON.h; sourceTree = "<group>"; };
-		901D2C6719058DC300161DEB /* InfoGrabrJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoGrabrJSON.m; sourceTree = "<group>"; };
+		901D2C6719058DC300161DEB /* InfoGrabrJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoGrabrJSON.m; sourceTree = "<group>"; wrapsLines = 0; };
 		907AAE95190778DF00E3988B /* RecordReportViewerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordReportViewerViewController.h; sourceTree = "<group>"; };
 		907AAE96190778DF00E3988B /* RecordReportViewerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordReportViewerViewController.m; sourceTree = "<group>"; };
 		907AAE97190778DF00E3988B /* RecordReportViewerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecordReportViewerViewController.xib; sourceTree = "<group>"; };
