@@ -262,6 +262,10 @@
     clientLead.phone1 = self.phoneOne.text;
     clientLead.phone2 = self.phoneTwo.text;
     clientLead.email = self.email.text;
+    clientLead.confId = self.confID.text;
+    clientLead.firstName = self.firstName.text;
+    clientLead.lastName = self.lastName.text;
+    clientLead.organization = self.organization.text;
 
     if (originalCount < [services count])
     {

@@ -99,7 +99,9 @@
     
     searchDisplayController.delegate = self;
     searchDisplayController.searchResultsDataSource = self;
-
+    
+    // for search results table view to use delegates like didSelectRowAtIndexPath
+    searchDisplayController.searchResultsDelegate = self;
     
     self.tableView.tableHeaderView = searchBar; //this line add the searchBar
     //on the top of tableView.
@@ -130,6 +132,8 @@
     }
     
     Attendee* a = nil;
+    // if it is the table view in which the search results are displayed
+    // then use seacrhResults Array
     if (tableView == self.searchDisplayController.searchResultsTableView)
         a = [searchResults objectAtIndex:[indexPath row]];
     else
@@ -144,7 +148,12 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     RecordDetailedViewController *rdvc = [[RecordDetailedViewController alloc ] init];
-    Attendee* selAttendee = [attendeesList objectAtIndex: [indexPath row]];
+    Attendee* selAttendee = nil;
+    
+    if (tableView == self.searchDisplayController.searchResultsTableView)
+        selAttendee = [searchResults objectAtIndex: [indexPath row]];
+    else
+        selAttendee = [attendeesList objectAtIndex: [indexPath row]];
     
     rdvc.attendeeInfo = selAttendee;
     [self.navigationController pushViewController:rdvc animated:YES];
