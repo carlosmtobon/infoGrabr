@@ -117,7 +117,7 @@
     // set lykerscale default
     selectedLyker = @"neutral";
     
-    [selectedServices appendString:@""];
+    selectedServices = [[NSMutableString alloc] initWithString:@""];
     selectedTime = @"";
 
 }
@@ -270,7 +270,7 @@
             NSNumber* num = (NSNumber*)[services objectAtIndex:(i-1)];
             NSInteger index = [num integerValue];
             
-            [selectedServices appendString:[services objectAtIndex:index ]];
+            [selectedServices appendString:[services objectAtIndex:index ] ];
             [selectedServices appendString:@", "];
         }
     }
@@ -288,7 +288,7 @@
     if (clientLead.confName.length > 0 && clientLead.firstName.length > 0 && clientLead.organization.length > 0)
     {
     
-    NSString *tmp = [NSString stringWithFormat:@"%@;%@;%@;%@;%@;%@;%@;%@;%@;%@;%@;%@;%@;%@;%@;%@;%@;%@;%@;%@;%@",clientLead.address,clientLead.cgtServices,clientLead.city,clientLead.company,clientLead.confId,clientLead.country,clientLead.email,clientLead.extraInfo,clientLead.firstName,clientLead.lastName,clientLead.membership,clientLead.office,clientLead.organization,clientLead.phone1,clientLead.phone2,clientLead.projectTimeframe,clientLead.state,clientLead.zipcode,clientLead.confName,clientLead.dateCreated,clientLead.lykerNum];
+    NSString *tmp = [NSString stringWithFormat:@" %@;%@;%@;%@;%@;%@;%@;%@;%@;%@;%@;%@;%@;%@;%@;%@;%@;%@;%@;%@;%@",clientLead.address,clientLead.cgtServices,clientLead.city,clientLead.company,clientLead.confId,clientLead.country,clientLead.email,clientLead.extraInfo,clientLead.firstName,clientLead.lastName,clientLead.membership,clientLead.office,clientLead.organization,clientLead.phone1,clientLead.phone2,clientLead.projectTimeframe,clientLead.state,clientLead.zipcode,clientLead.confName,clientLead.dateCreated,clientLead.lykerNum];
     NSData *data = [InfoGrabrJSON pushAttendeeSync:tmp];
     
         // check if data exists
@@ -405,19 +405,23 @@
 
 -(void)clearForm
 {
-    //clientLead.projectTimeframe selectedTime;
-    clientLead.extraInfo = self.notes.text;
-    clientLead.company = self.company.text;
-    clientLead.office = self.office.text;
-    clientLead.address = self.address.text;
-    clientLead.city = self.city.text;
-    clientLead.state = self.state.text;
-    clientLead.zipcode = self.zipcode.text;
-    clientLead.country = self.country.text;
-    clientLead.membership = self.membership.text;
-    clientLead.phone1 = self.phoneOne.text;
-    clientLead.phone2 = self.phoneTwo.text;
-    clientLead.email = self.email.text;
+    selectedTime = @"";
+    self.notes.text = @"";
+    self.company.text = @"";
+    self.office.text = @"";
+    self.address.text = @"";
+    self.city.text = @"";
+    self.state.text = @"";
+    self.zipcode.text = @"";
+    self.country.text = @"";
+    self.membership.text = @"";
+    self.phoneOne.text = @"";
+    self.phoneTwo.text = @"";
+    self.email.text = @"";
+    
+    selectedLyker = @"neutral";
+    
+    [selectedServices appendString:@""];
 }
 
 @end
