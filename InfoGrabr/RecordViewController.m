@@ -27,6 +27,8 @@
         
         // itialize data
         attendeesList = [[NSMutableArray alloc] init];
+        
+        searchResults = [[NSMutableArray alloc] init];
     }
     return self;
 }
@@ -86,6 +88,21 @@
         
         NSLog(@"attendeesList: %@", attendeesList);
     }
+    
+    /*the search bar width must be > 1, the height must be at least 44
+     (the real size of the search bar)*/
+    searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0,70,320,44)];
+    
+    searchDisplayController = [[UISearchDisplayController alloc] initWithSearchBar:searchBar contentsController:self];
+    /*contents controller is the UITableViewController, this let you to reuse
+     the same TableViewController Delegate method used for the main table.*/
+    
+    searchDisplayController.delegate = self;
+    searchDisplayController.searchResultsDataSource = self;
+
+    
+    self.tableView.tableHeaderView = searchBar; //this line add the searchBar
+    //on the top of tableView.
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -97,7 +114,10 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [attendeesList count];
+    if (tableView == self.searchDisplayController.searchResultsTableView)
+        return [searchResults count];
+    else
+        return [attendeesList count];   
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -108,8 +128,16 @@
     {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"UITableViewCell"];
     }
-    Attendee* a = [attendeesList objectAtIndex:[indexPath row]];
-    [[cell textLabel] setText:a.firstName];
+    
+    Attendee* a = nil;
+    if (tableView == self.searchDisplayController.searchResultsTableView)
+        a = [searchResults objectAtIndex:[indexPath row]];
+    else
+        a = [attendeesList objectAtIndex:[indexPath row]];
+
+    
+    [[cell textLabel] setText:[NSString stringWithFormat:@"%@: %@ %@",a.confId,a.firstName,a.lastName]];
+    
     return cell;
 }
 
@@ -123,6 +151,34 @@
 }
 
 
+- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
+{
+    [searchResults removeAllObjects];
+    //remove all elements from the array that will contain found items
+    
+    Attendee *a;
+    
+    // Search and recreate structure of the original array 
+    
+    for(a in attendeesList)
+    {
+
+        NSString *element = [NSString stringWithFormat:@"%@: %@ %@",a.confId,a.firstName,a.lastName];
+        
+        // get string index location and length
+        NSRange range = [element rangeOfString:searchString
+                                       options:NSCaseInsensitiveSearch];
+        
+        if (range.length > 0) { //if the substring match
+            [searchResults addObject:a];//add the element to group
+        }
+
+    }
+    
+    return YES;
+}
+
+
 - (IBAction)viewReports:(id)sender
 {
     RecordReportViewController *rrvc = [[RecordReportViewController alloc] init];
@@ -130,4 +186,3 @@
 }
 
 @end
-
