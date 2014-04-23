@@ -37,28 +37,10 @@
     // create default services list - p.h, e.p
     services = [[NSMutableArray alloc] initWithObjects: @"Analysis Consult", @"Biorepository", @"Gene Expression", @"Genotyping", @"Sequencing", nil];
     
-    // update services from the web
-    // update services with data from the web - e.p
-    NSData *data = [InfoGrabrJSON fetchServicesSync];//:^(NSURLResponse *response, NSData *data, NSError *error)
-
-    // catch errors
-    NSError *error = nil;
-    // check if data exists
-    if (data)
-    {
-        // build array of service names from requested data
-        NSDictionary* json = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
-        
-        // remove default objects from array
-        [services removeAllObjects];
-        // loop through dictionary that was retrieved from the web
-        for (NSDictionary* dic in json)
-        {
-         [services addObject:[dic valueForKey:@"name"]];
-        }
-
-        NSLog(@"services: %@", services);
-    }
+    // update services with data from the web
+    NSMutableArray* tmp = [InfoGrabrJSON fetchServices];
+    if (tmp)
+        services = tmp;
     
     // get original array count before number can potentially change by picker - p.h
     originalCount = services.count;
@@ -312,7 +294,7 @@
         NSString *tmp = [NSString stringWithFormat:@" %@;%@;%@;%@;%@;%@;%@;%@;%@;%@;%@;%@;%@;%@;%@;%@;%@;%@;%@;%@;%@",clientLead.address,clientLead.cgtServices,clientLead.city,clientLead.company,clientLead.confId,clientLead.country,clientLead.email,clientLead.extraInfo,clientLead.firstName,clientLead.lastName,clientLead.membership,clientLead.office,clientLead.organization,clientLead.phone1,clientLead.phone2,clientLead.projectTimeframe,clientLead.state,clientLead.zipcode,clientLead.confName,clientLead.dateCreated,clientLead.lykerNum];
         
         // attempt to push data to the server
-        if ([InfoGrabrJSON pushAttendeeSync:tmp])
+        if ([InfoGrabrJSON pushAttendeeInfo:tmp])
         {
             
             alert = [[UIAlertView alloc] initWithTitle:@"Information Saved" message:@"Information was saved successfully to database." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];

@@ -46,48 +46,8 @@
     // Do any additional setup after loading the view from its nib.
     
     
-    // fetch from web service (synchronously)
-    NSData* data = [InfoGrabrJSON fetchAttendeesSync];
-    NSError *error = nil;
-    
-    if (data)
-    {
-        // build array of service names from requested data
-        NSDictionary* json = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
-        [attendeesList removeAllObjects];
-        AttendeeStore* store = [(InfoGrabrAppDelegate*)[[UIApplication sharedApplication]delegate] attendeeStore];
-        for (NSDictionary* dic in json)
-        {
-            
-            Attendee* add = [store createAttendee];
-            add.confName = [dic valueForKey:@"confName"];
-            add.confId = [dic valueForKey:@"confId"];
-            add.cgtServices = [dic valueForKey:@"cgtServices"];
-            add.firstName = [dic valueForKey:@"firstName"];
-            add.lastName = [dic valueForKey:@"lastName"];
-            add.address = [dic valueForKey:@"address"];
-            add.city = [dic valueForKey:@"city"];
-            add.country = [dic valueForKey:@"country"];
-            add.company = [dic valueForKey:@"company"];
-            add.email = [dic valueForKey:@"email"];
-            add.extraInfo = [dic valueForKey:@"extraInfo"];
-            add.membership = [dic valueForKey:@"membership"];
-            add.office = [dic valueForKey:@"office"];
-            add.organization = [dic valueForKey:@"organization"];
-            add.phone1 = [dic valueForKey:@"phone1"];
-            add.phone2 = [dic valueForKey:@"phone2"];
-            add.state = [dic valueForKey:@"state"];
-            add.zipcode = [dic valueForKey:@"zipcode"];
-            add.projectTimeframe = [dic valueForKey:@"projectTimeFrame"];
-            add.dateCreated = [dic valueForKey:@"dateCreated"];
-            add.lykerNum = [dic valueForKey:@"lykerNum"];
-            
-            [attendeesList addObject:add];
-        }
-        
-        
-        NSLog(@"attendeesList: %@", attendeesList);
-    }
+    // fetch from attendees web service (synchronously)
+    attendeesList = [InfoGrabrJSON fetchAttendees];
     
     /*the search bar width must be > 1, the height must be at least 44
      (the real size of the search bar)*/

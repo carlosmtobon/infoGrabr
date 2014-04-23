@@ -1,6 +1,8 @@
 #import <Foundation/Foundation.h>
 #import "InfoGrabrJSON.h"
 #import "Attendee.h"
+#import "AttendeeStore.h"
+#import "InfoGrabrAppDelegate.h"
 
 #define SERVICES_URL @"http://www.eniopn.com/infograbr/index.php?getinfo=services"
 #define CONFERENCES_URL @"http://www.eniopn.com/infograbr/index.php?getinfo=conferences"
@@ -11,35 +13,8 @@
 
 @implementation InfoGrabrJSON
 
-+ (void)fetchURL: (NSString*)urlStr handler:(void (^)(NSURLResponse *resp, NSData *data, NSError *error)) handler
-{
-    // request data from web service
-    NSURL *url = [[NSURL alloc] initWithString:urlStr];
-    [NSURLConnection sendAsynchronousRequest:[[NSURLRequest alloc] initWithURL:url] queue:[[NSOperationQueue alloc] init] completionHandler:handler];
-}
-
-+ (NSData *)postDataToUrl:(NSString*)urlString :(NSString*)jsonString
-{
-    NSData* responseData = nil;
-    NSURL *url=[NSURL URLWithString:[urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
-    responseData = [NSMutableData data] ;
-    NSMutableURLRequest *request=[NSMutableURLRequest requestWithURL:url];
-    NSString *bodydata=[NSString stringWithFormat:@"data=%@",jsonString];
-    
-    [request setHTTPMethod:@"POST"];
-    NSData *req=[NSData dataWithBytes:[bodydata UTF8String] length:[bodydata length]];
-    [request setHTTPBody:req];
-    NSURLResponse* response;
-    NSError* error = nil;
-    responseData = [NSURLConnection sendSynchronousRequest:request     returningResponse:&response error:&error];
-    NSString *responseString = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
-    
-    NSLog(@"the final output is:%@",responseString);
-    
-    return responseData;
-}
-
-+ (BOOL) postDataToUrlSync: (NSString*) urlString : (NSString*)data
+// Helper: make a post request with the specified json string to the specified url
++ (BOOL) jsonDataPostRequestToURL: (NSString*) urlString : (NSString*)data
 {
     NSData* pdata = [data dataUsingEncoding:NSUTF8StringEncoding];
     
@@ -59,68 +34,80 @@
     return NO;
 }
 
-+ (NSData *)fetchURLSync: (NSString*)urlStr
+// Helper method: send synchronous request to specified url and return the results
++ (NSData *)sendSynchronousRequestToUrl: (NSString*)urlStr
 {
     // request data from web service
     // Send a synchronous request
-    NSURLRequest * urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:urlStr]];
-    NSURLResponse * response = nil;
-    NSError * error = nil;
-    NSData * data = [NSURLConnection sendSynchronousRequest:urlRequest
+    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:urlStr]];
+    NSURLResponse *response = nil;
+    NSError *error = nil;
+    NSData *data = [NSURLConnection sendSynchronousRequest:urlRequest
                                           returningResponse:&response
                                                       error:&error];
     return data;
 }
 
-+ (void)fetchServices: (void (^)(NSURLResponse *resp, NSData *data, NSError *error)) handler
++ (NSDictionary*) fetchJSONToDictionary: (NSString*)urlStr
 {
-    [InfoGrabrJSON fetchURL:SERVICES_URL handler:handler];
+    NSData* webServiceResults = [InfoGrabrJSON sendSynchronousRequestToUrl:urlStr];
+    NSError *error = nil;
+    if (webServiceResults)
+    {
+        return [NSJSONSerialization JSONObjectWithData:webServiceResults
+                                    options:NSJSONReadingMutableContainers
+                                    error:&error];
+    }
+    return nil;
 }
 
-+ (NSData *)fetchServicesSync
++ (NSMutableArray*) fetchServices
 {
-    return [InfoGrabrJSON fetchURLSync:SERVICES_URL];
-    
+    // store services info into dictionary
+    NSDictionary* resultsDict = [InfoGrabrJSON fetchJSONToDictionary:SERVICES_URL];
+    if (resultsDict)
+    {
+        NSMutableArray* arr = [[NSMutableArray alloc] init];
+        
+        // loop through results dictionary and grab what we need
+        for (NSDictionary* dic in resultsDict)
+        {
+            [arr addObject:[dic valueForKey:@"name"]];
+        }
+        
+        return arr;
+    }
+    return nil;
 }
 
-+ (void)fetchConferences: (void (^)(NSURLResponse *resp, NSData *data, NSError *error)) handler
++ (NSMutableArray*) fetchConferences
 {
-    [InfoGrabrJSON fetchURL:CONFERENCES_URL handler:handler];
-}
-
-+ (NSData *)fetchConferencesSync
-{
-    return [InfoGrabrJSON fetchURLSync:CONFERENCES_URL];
-}
-
-
-+ (NSData *)fetchAttendeesSync
-{
-    return [InfoGrabrJSON fetchURLSync:ATTENDEES_URL];
-}
-
-+ (BOOL)pushAttendeeSync:(NSString *)info
-{
-    return [InfoGrabrJSON postDataToUrlSync:PUSH_ATTENDEES_URL :info];
+    // store services info into dictionary
+    NSDictionary* resultsDict = [InfoGrabrJSON fetchJSONToDictionary:CONFERENCES_URL];
+    if (resultsDict)
+    {
+        NSMutableArray* arr = [[NSMutableArray alloc] init];
+        
+        // loop through results dictionary and grab what we need
+        for (NSDictionary* dic in resultsDict)
+        {
+            [arr addObject:[dic valueForKey:@"name"]];
+        }
+        
+        return arr;
+    }
+    return nil;
 }
 
 + (NSMutableArray*) fetchTopLeads
 {
-    NSData* webServiceResults = [InfoGrabrJSON fetchURLSync:TOPLEADS_URL];
-    if (webServiceResults)
+    NSDictionary* resultsDict = [InfoGrabrJSON fetchJSONToDictionary:TOPLEADS_URL];
+    if (resultsDict)
     {
-        // get got JSON data from web, parse it into a nice array
-        NSError *error = nil;
-        // build array of service names from requested data
-        NSDictionary* json = [NSJSONSerialization JSONObjectWithData:webServiceResults
-                                                  options:NSJSONReadingMutableContainers
-                                                  error:&error];
-        NSLog(@"%@\n", json);
-        
         NSMutableArray* arr = [[NSMutableArray alloc] init];
         
         // loop through dictionary that was retrieved from the web
-        for (NSDictionary* dic in json)
+        for (NSDictionary* dic in resultsDict)
         {
             [arr addObject:[NSString stringWithFormat:@"%@ %@ %@",
                                                     [dic valueForKey:@"firstName"],
@@ -135,21 +122,13 @@
 
 + (NSMutableArray*) fetchCityTotal
 {
-    NSData* webServiceResults = [InfoGrabrJSON fetchURLSync:CITY_TOTAL_URL];
-    if (webServiceResults)
+    NSDictionary* resultsDict = [InfoGrabrJSON fetchJSONToDictionary:CITY_TOTAL_URL];
+    if (resultsDict)
     {
-        // get got JSON data from web, parse it into a nice array
-        NSError *error = nil;
-        // build array of service names from requested data
-        NSDictionary* json = [NSJSONSerialization JSONObjectWithData:webServiceResults
-                                                             options:NSJSONReadingMutableContainers
-                                                               error:&error];
-        NSLog(@"%@\n", json);
-        
         NSMutableArray* arr = [[NSMutableArray alloc] init];
         
         // loop through dictionary that was retrieved from the web
-        for (NSDictionary* dic in json)
+        for (NSDictionary* dic in resultsDict)
         {
             [arr addObject:[NSString stringWithFormat:@"%@\t%@",
                             [dic valueForKey:@"city"],
@@ -159,6 +138,57 @@
         return arr;
     }
     return nil;
+}
+
++ (NSMutableArray*) fetchAttendees
+{
+    // store services info into dictionary
+    NSDictionary* resultsDict = [InfoGrabrJSON fetchJSONToDictionary:ATTENDEES_URL];
+    if (resultsDict)
+    {
+        NSMutableArray* arr = [[NSMutableArray alloc] init];
+        
+        // grab global store object
+        AttendeeStore* store = [(InfoGrabrAppDelegate*)[[UIApplication sharedApplication]delegate]attendeeStore];
+        
+        // loop through results dictionary and grab what we need
+        for (NSDictionary* dic in resultsDict)
+        {
+            // parse dictionary into attendee object
+            Attendee* add = [store createAttendee];
+            add.confName = [dic valueForKey:@"confName"];
+            add.confId = [dic valueForKey:@"confId"];
+            add.cgtServices = [dic valueForKey:@"cgtServices"];
+            add.firstName = [dic valueForKey:@"firstName"];
+            add.lastName = [dic valueForKey:@"lastName"];
+            add.address = [dic valueForKey:@"address"];
+            add.city = [dic valueForKey:@"city"];
+            add.country = [dic valueForKey:@"country"];
+            add.company = [dic valueForKey:@"company"];
+            add.email = [dic valueForKey:@"email"];
+            add.extraInfo = [dic valueForKey:@"extraInfo"];
+            add.membership = [dic valueForKey:@"membership"];
+            add.office = [dic valueForKey:@"office"];
+            add.organization = [dic valueForKey:@"organization"];
+            add.phone1 = [dic valueForKey:@"phone1"];
+            add.phone2 = [dic valueForKey:@"phone2"];
+            add.state = [dic valueForKey:@"state"];
+            add.zipcode = [dic valueForKey:@"zipcode"];
+            add.projectTimeframe = [dic valueForKey:@"projectTimeFrame"];
+            add.dateCreated = [dic valueForKey:@"dateCreated"];
+            add.lykerNum = [dic valueForKey:@"lykerNum"];
+            
+            [arr addObject:add];
+        }
+        
+        return arr;
+    }
+    return nil;
+}
+
++ (BOOL)pushAttendeeInfo:(NSString *)info
+{
+    return [InfoGrabrJSON jsonDataPostRequestToURL:PUSH_ATTENDEES_URL :info];
 }
 
 @end

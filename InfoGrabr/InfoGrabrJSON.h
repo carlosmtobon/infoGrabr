@@ -2,12 +2,11 @@
 #import "Attendee.h"
 
 @interface InfoGrabrJSON : NSObject
-+ (void)fetchServices: (void (^)(NSURLResponse *resp, NSData *data, NSError *error)) handler;
-+ (void)fetchConferences: (void (^)(NSURLResponse *resp, NSData *data, NSError *error)) handler;
-+ (NSData *)fetchServicesSync;
-+ (NSData *)fetchAttendeesSync;
-+ (BOOL)pushAttendeeSync:(NSString *)info;
+
++ (NSMutableArray*) fetchServices;
 + (NSMutableArray*) fetchTopLeads;
 + (NSMutableArray*) fetchCityTotal;
++ (NSMutableArray*) fetchAttendees;
++ (BOOL)pushAttendeeInfo:(NSString *)info;
 
 @end
