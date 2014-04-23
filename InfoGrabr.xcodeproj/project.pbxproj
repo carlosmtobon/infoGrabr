@@ -49,6 +49,8 @@
 		9015131F19075EDB00094289 /* RecordReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9015131D19075EDB00094289 /* RecordReportViewController.m */; };
 		9015132019075EDB00094289 /* RecordReportViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9015131E19075EDB00094289 /* RecordReportViewController.xib */; };
 		901D2C6819058DC300161DEB /* InfoGrabrJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 901D2C6719058DC300161DEB /* InfoGrabrJSON.m */; };
+		907AAE98190778E000E3988B /* RecordReportViewerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 907AAE96190778DF00E3988B /* RecordReportViewerViewController.m */; };
+		907AAE99190778E000E3988B /* RecordReportViewerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 907AAE97190778DF00E3988B /* RecordReportViewerViewController.xib */; };
 		90FD8406190617A200A1E362 /* RecordDetailedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 90FD8404190617A200A1E362 /* RecordDetailedViewController.m */; };
 		90FD8407190617A200A1E362 /* RecordDetailedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90FD8405190617A200A1E362 /* RecordDetailedViewController.xib */; };
 /* End PBXBuildFile section */
@@ -132,6 +134,9 @@
 		9015131E19075EDB00094289 /* RecordReportViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecordReportViewController.xib; sourceTree = "<group>"; };
 		901D2C6619058DC300161DEB /* InfoGrabrJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoGrabrJSON.h; sourceTree = "<group>"; };
 		901D2C6719058DC300161DEB /* InfoGrabrJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoGrabrJSON.m; sourceTree = "<group>"; };
+		907AAE95190778DF00E3988B /* RecordReportViewerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordReportViewerViewController.h; sourceTree = "<group>"; };
+		907AAE96190778DF00E3988B /* RecordReportViewerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordReportViewerViewController.m; sourceTree = "<group>"; };
+		907AAE97190778DF00E3988B /* RecordReportViewerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecordReportViewerViewController.xib; sourceTree = "<group>"; };
 		90FD8403190617A200A1E362 /* RecordDetailedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordDetailedViewController.h; sourceTree = "<group>"; };
 		90FD8404190617A200A1E362 /* RecordDetailedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordDetailedViewController.m; sourceTree = "<group>"; };
 		90FD8405190617A200A1E362 /* RecordDetailedViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecordDetailedViewController.xib; sourceTree = "<group>"; };
@@ -259,6 +264,8 @@
 				90FD8404190617A200A1E362 /* RecordDetailedViewController.m */,
 				9015131C19075EDB00094289 /* RecordReportViewController.h */,
 				9015131D19075EDB00094289 /* RecordReportViewController.m */,
+				907AAE95190778DF00E3988B /* RecordReportViewerViewController.h */,
+				907AAE96190778DF00E3988B /* RecordReportViewerViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -280,6 +287,7 @@
 				9015131E19075EDB00094289 /* RecordReportViewController.xib */,
 				90FD8405190617A200A1E362 /* RecordDetailedViewController.xib */,
 				5694FDD918F8188B0061A991 /* ScanViewController.xib */,
+				907AAE97190778DF00E3988B /* RecordReportViewerViewController.xib */,
 				11801BB91902E70800223E27 /* QuestionnaireViewController.xib */,
 			);
 			name = Views;
@@ -400,6 +408,7 @@
 				11A331ED19072CB800AD8349 /* radiobutton.png in Resources */,
 				11A331EF19072CD200AD8349 /* checkbox.png in Resources */,
 				9015132019075EDB00094289 /* RecordReportViewController.xib in Resources */,
+				907AAE99190778E000E3988B /* RecordReportViewerViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,6 +431,7 @@
 				118CDBEE1906007B008FD4B1 /* MIRadioButtonGroup.m in Sources */,
 				90FD8406190617A200A1E362 /* RecordDetailedViewController.m in Sources */,
 				9015131F19075EDB00094289 /* RecordReportViewController.m in Sources */,
+				907AAE98190778E000E3988B /* RecordReportViewerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
